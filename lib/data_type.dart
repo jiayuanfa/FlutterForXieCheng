@@ -131,5 +131,14 @@ class _DataTypeState extends State<DataType> {
     for(var key in map.keys) {
       print('$key : ${map[key]}');
     }
+
+    for (var value in map.values) {
+      print(value);
+    }
+
+    map.remove('xiaoming');
+    print(map);
+
+    print(map.containsKey('xiaohong'));
   }
 }
