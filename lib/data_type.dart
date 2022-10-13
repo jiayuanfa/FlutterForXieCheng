@@ -1,3 +1,4 @@
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class _DataTypeState extends State<DataType> {
     _numType();
     stringType();
     boolType();
+    listType();
     return Container(
       child: const Text('常用数据类型，请查看控制台输出'),
     );
@@ -37,7 +39,8 @@ class _DataTypeState extends State<DataType> {
 
   /// 字符串类型
   stringType() {
-    String str1 = '字符串'; String str2 = "双引号";
+    String str1 = '字符串';
+    String str2 = "双引号";
     String str3 = 'str1: $str1 str2:$str2';
     // ignore: prefer_interpolation_to_compose_strings
     String str4 = 'str1: ' + str1 + " str2:" + str2;
@@ -47,12 +50,12 @@ class _DataTypeState extends State<DataType> {
     }
     if (kDebugMode) {
       print(str4);
-      print(str5.substring(1, 5));  // 通过下标截取指定内容
-      print(str5.indexOf("类型"));  // 判断指定内容的下标位置
+      print(str5.substring(1, 5)); // 通过下标截取指定内容
+      print(str5.indexOf("类型")); // 判断指定内容的下标位置
       print(str5.startsWith("常", 0)); // 判断一个字符串的指定位置是不是以指定内容开始
       print(str5.replaceAll("常", "用")); // 把指定内容，全部替换为指定内容
-      print(str5.contains("控制台"));  // 判断字符串是否包含指定内容
-      print(str5.split("，"));   // 把一个字符串通过指定内容分割成若干个字符串数组
+      print(str5.contains("控制台")); // 判断字符串是否包含指定内容
+      print(str5.split("，")); // 把一个字符串通过指定内容分割成若干个字符串数组
       print(str5);
     }
   }
@@ -66,6 +69,29 @@ class _DataTypeState extends State<DataType> {
       print(fail);
       print(success || fail);
       print(success && fail);
+    }
+  }
+
+  /// list集合
+  listType() {
+    List list = [1, 2, 3, '集合'];
+    List<int> list1 = [1, 2, 3];
+    list.add('发哥');
+
+    List list3 = [];
+    list3.addAll(list);
+
+    if (kDebugMode) {
+      print(list);
+      for (int i = 0; i < list.length; i++) {
+        print(list[i]);
+      }
+      for (var obj in list) {
+        print(obj);
+      }
+      list.forEach((element) {
+        print(element);
+      });
     }
   }
 }
