@@ -19,3 +19,4 @@ samples, guidance on mobile development, and a full API reference.
 
 # Dart基础
 - 常用数据类型 (data_type.dart)
+- 常用数据类型之字符串、以及字符串的API（data_type.dart）

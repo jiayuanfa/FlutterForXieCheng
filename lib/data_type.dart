@@ -52,6 +52,7 @@ class _DataTypeState extends State<DataType> {
       print(str5.replaceAll("常", "用")); // 把指定内容，全部替换为指定内容
       print(str5.contains("控制台"));  // 判断字符串是否包含指定内容
       print(str5.split("，"));   // 把一个字符串通过指定内容分割成若干个字符串数组
+      print(str5);
     }
   }
 }
