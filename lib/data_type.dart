@@ -18,6 +18,7 @@ class _DataTypeState extends State<DataType> {
     boolType();
     listType();
     mapType();
+    tips();
     return Container(
       child: const Text('常用数据类型，请查看控制台输出'),
     );
@@ -140,5 +141,28 @@ class _DataTypeState extends State<DataType> {
     print(map);
 
     print(map.containsKey('xiaohong'));
+  }
+
+  /// dynamic、val、Object三者的区别
+  tips() {
+
+    /// dynamic每次赋值之后，才决定其数据类型
+    dynamic x = 'hal';
+    print(x.runtimeType);
+    print(x);
+
+    x = 123;
+    print(x.runtimeType);
+    print(x);
+
+    var a = 'val';  // 赋值的时候已经决定了它的数据类型，后面不能再修改为其他数据类型
+    print(x.runtimeType);
+    print(x);
+
+    /// Object类型确定之后，比如是一个String，不能调用对象之外的方法。比如是一个String，但是却不能调用subString方法
+    Object o1 = "123";
+    print(o1.runtimeType);
+    print(o1);
+
   }
 }

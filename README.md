@@ -23,3 +23,4 @@ samples, guidance on mobile development, and a full API reference.
 - bool类型的用法
 - 集合list的用法
 - map的用法
+- dynamic、var、Object三者的却别，以及和数据类型的关系
