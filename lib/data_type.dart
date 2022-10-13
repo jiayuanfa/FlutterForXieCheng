@@ -14,6 +14,7 @@ class _DataTypeState extends State<DataType> {
   Widget build(BuildContext context) {
     _numType();
     stringType();
+    boolType();
     return Container(
       child: const Text('常用数据类型，请查看控制台输出'),
     );
@@ -53,6 +54,18 @@ class _DataTypeState extends State<DataType> {
       print(str5.contains("控制台"));  // 判断字符串是否包含指定内容
       print(str5.split("，"));   // 把一个字符串通过指定内容分割成若干个字符串数组
       print(str5);
+    }
+  }
+
+  /// bool 类型
+  boolType() {
+    bool success = true;
+    bool fail = false;
+    if (kDebugMode) {
+      print(success);
+      print(fail);
+      print(success || fail);
+      print(success && fail);
     }
   }
 }
