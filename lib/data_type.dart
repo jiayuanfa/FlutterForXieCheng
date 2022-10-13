@@ -17,6 +17,7 @@ class _DataTypeState extends State<DataType> {
     stringType();
     boolType();
     listType();
+    mapType();
     return Container(
       child: const Text('常用数据类型，请查看控制台输出'),
     );
@@ -106,5 +107,29 @@ class _DataTypeState extends State<DataType> {
     int index = list.indexOf("海立婷");
     print(index);
 
+  }
+
+  /// map
+  mapType() {
+    Map map = {'xiaoming': '小明', 'xiaohong': '小红'};
+    print(map);
+
+    Map map1 = {};
+    map1['xiaoming'] = '小明';
+    map1['xiaohong'] = '小红';
+    print(map1);
+
+    map.forEach((key, value) {
+      print('$key $value');
+    });
+
+    Map map2 = map.map((key, value){
+        return MapEntry(value, key);
+    });
+    print(map2);
+
+    for(var key in map.keys) {
+      print('$key : ${map[key]}');
+    }
   }
 }

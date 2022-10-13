@@ -22,3 +22,4 @@ samples, guidance on mobile development, and a full API reference.
 - 常用数据类型之字符串、以及字符串的API（data_type.dart）
 - bool类型的用法
 - 集合list的用法
+- map的用法
