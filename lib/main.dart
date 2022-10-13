@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/data_type.dart';
+import 'package:my_app/oop_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,6 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+    learnOOP();
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -57,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
         child: ListView(
           children: const <Widget>[
-            DataType()
+            // DataType()
           ],
         ),
       ),
@@ -67,5 +71,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  void learnOOP() {
+    Student.doPrint('learnOOP');
+
+    /// 创建Student实例
+    Student student = Student('清华', 'Jack', 18);
+    student.school = '985';
+    print(student.toString());
+
+    Student student2 = Student('北大', 'Tom', 16, city: '北京', country: '中国');
+    student2.school = '985';
+    print(student2.toString());
   }
 }

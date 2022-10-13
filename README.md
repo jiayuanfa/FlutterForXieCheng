@@ -24,3 +24,9 @@ samples, guidance on mobile development, and a full API reference.
 - 集合list的用法
 - map的用法
 - dynamic、var、Object三者的却别，以及和数据类型的关系
+- 类
+- 类的构造函数
+- 类的命名构造函数
+- 类的工厂命名构造函数
+- 类的get set方法
+- 类的重载方法
