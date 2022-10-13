@@ -93,5 +93,18 @@ class _DataTypeState extends State<DataType> {
         print(element);
       });
     }
+
+    list.remove('发哥');
+    print(list);
+
+    list.insert(0, '海立婷');
+    print(list);
+
+    List list4 = list.sublist(0, 2);
+    print(list4);
+
+    int index = list.indexOf("海立婷");
+    print(index);
+
   }
 }
