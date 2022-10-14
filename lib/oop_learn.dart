@@ -30,13 +30,11 @@ class Student extends Person {
   /// this.country 默认参数
   Student(this._school, String? name, int? age, {this.city, this.country = 'China'})
       : super(name, age) {
-
-    print('构造方法体不是必须的');
   }
 
   /// 命名构造方法
   Student.cover(Student stu): super(stu.name, stu.age) {
-    print('明明构造方法');
+    print('命名构造方法');
   }
 
   /// 命名工厂构造方法 factory [类名+.+方法名]
@@ -61,7 +59,6 @@ abstract class Study {
   void study(); /// 抽象方法（有抽象方法的类一定是抽象类）
   @override
   String toString() {
-    // TODO: implement toString
     return super.toString();
   }
 }

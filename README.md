@@ -33,3 +33,4 @@ samples, guidance on mobile development, and a full API reference.
 - 抽象类、抽象方法
 - mixin(with) 多继承
 - 方法、私有方法、匿名方法
+- 泛型、泛型约束

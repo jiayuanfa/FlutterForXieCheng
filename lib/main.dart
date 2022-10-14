@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/data_type.dart';
+import 'package:my_app/generic_learn.dart';
 import 'package:my_app/oop_learn.dart';
 
 void main() {
@@ -95,5 +96,13 @@ class _MyHomePageState extends State<MyHomePage> {
     FunctionLearn functionLearn = FunctionLearn();
     int result = functionLearn.sum(1, 2);
     print(result);
+
+    // 泛型
+    TestGeneric testGeneric = TestGeneric();
+    testGeneric.start();
+
+    // 泛型约束
+    Member<Student> member = Member(Student("清华", "发哥", 18));
+    member.fixedName();
   }
 }
