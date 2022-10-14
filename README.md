@@ -34,3 +34,4 @@ samples, guidance on mobile development, and a full API reference.
 - mixin(with) 多继承
 - 方法、私有方法、匿名方法
 - 泛型、泛型约束
+- 常见的一些编程技巧：安全调用、为表达式设置默认值、简化判断
