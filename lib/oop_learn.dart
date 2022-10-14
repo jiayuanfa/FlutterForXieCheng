@@ -56,6 +56,24 @@ class Student extends Person {
   }
 }
 
+/// 抽象类
+abstract class Study {
+  void study(); /// 抽象方法（有抽象方法的类一定是抽象类）
+  @override
+  String toString() {
+    // TODO: implement toString
+    return super.toString();
+  }
+}
+
+/// 继承抽象类，必须实现抽象类的方法，否则则必须是抽象类
+class StudyFlutter extends Study {
+  @override
+  void study() {
+    print('Learn flutter');
+  }
+}
+
 /// 工厂构造方法（单例模式的提现）
 // class Logger {
 //   static Logger? _cache;

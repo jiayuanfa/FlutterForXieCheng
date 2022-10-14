@@ -84,5 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
     Student student2 = Student('北大', 'Tom', 16, city: '北京', country: '中国');
     student2.school = '985';
     print(student2.toString());
+
+    // 抽象类的使用
+    StudyFlutter studyFlutter = StudyFlutter();
+    studyFlutter.study();
   }
 }
