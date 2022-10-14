@@ -88,5 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // 抽象类的使用
     StudyFlutter studyFlutter = StudyFlutter();
     studyFlutter.study();
+
+    // 多继承
   }
 }

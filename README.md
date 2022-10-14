@@ -31,3 +31,4 @@ samples, guidance on mobile development, and a full API reference.
 - 类的get set方法
 - 类的重载方法
 - 抽象类、抽象方法
+- mixin(with) 多继承

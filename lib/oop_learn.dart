@@ -74,6 +74,17 @@ class StudyFlutter extends Study {
   }
 }
 
+/// mixin 多继承
+/// 多继承是为了有多个类的能力
+/// 为我们现在已经有的类，增加别的类的特性
+class Test extends Person with Study {
+  Test(super.name, super.age);
+
+  @override
+  void study() {
+  }
+}
+
 /// 工厂构造方法（单例模式的提现）
 // class Logger {
 //   static Logger? _cache;
