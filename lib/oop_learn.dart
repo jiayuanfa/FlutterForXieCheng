@@ -71,6 +71,9 @@ class StudyFlutter extends Study {
   @override
   void study() {
     print('Learn flutter');
+
+    FunctionLearn functionLearn = FunctionLearn();
+    functionLearn._learn();
   }
 }
 
@@ -82,6 +85,29 @@ class Test extends Person with Study {
 
   @override
   void study() {
+  }
+}
+
+/// 方法学习
+class FunctionLearn {
+
+  /// 相加
+  int sum(int val1, int val2) {
+    return val1 + val2;
+  }
+
+  /// 私有方法
+  /// 作用域是当前文件
+  _learn() {
+
+  }
+
+  /// 匿名方法、lanmda
+  anonymousFunction() {
+    List list = ["私有方法", "匿名方法"];
+    list.forEach((element) {
+      print(element);
+    });
   }
 }
 

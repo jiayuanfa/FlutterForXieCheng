@@ -90,5 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
     studyFlutter.study();
 
     // 多继承
+
+    // 方法
+    FunctionLearn functionLearn = FunctionLearn();
+    int result = functionLearn.sum(1, 2);
+    print(result);
   }
 }
