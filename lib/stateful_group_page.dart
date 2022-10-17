@@ -98,6 +98,25 @@ class _StatefulGroupState extends State<StatefulGroup> {
                       width: 200,
                       height: 200,
                     ),
+                    const TextField(
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                          hintText: '请输入',
+                          hintStyle: TextStyle(fontSize: 15)
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      margin: const EdgeInsets.only(top: 10),
+                      decoration: const BoxDecoration(color: Colors.lightBlueAccent),
+                      child: PageView(
+                        children: <Widget>[
+                          _item('Page1', Colors.deepPurple),
+                          _item('Page2', Colors.green),
+                          _item('Page3', Colors.red)
+                        ],
+                      ),
+                    )
                   ],
                 ))
             : const Text('列表'),
@@ -108,5 +127,16 @@ class _StatefulGroupState extends State<StatefulGroup> {
   Future<void> _handleRefresh() async {
     await Future.delayed(const Duration(microseconds: 2000));
     return;
+  }
+
+  _item(String title, Color color) {
+    return Container(
+      alignment: Alignment.center,
+      decoration: BoxDecoration(color: color),
+      child: Text(
+        title,
+        style: const TextStyle(fontSize: 22, color: Colors.white),
+      ),
+    );
   }
 }

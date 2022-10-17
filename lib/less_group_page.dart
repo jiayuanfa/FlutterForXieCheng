@@ -57,7 +57,7 @@ class LessGroupPage extends StatelessWidget {
               const AlertDialog(
                 title: Text('盘他！'),
                 content: Text('你这个糟老头子坏得很'),
-              )
+              ),
             ],
           ),
         ),
