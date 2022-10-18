@@ -5,17 +5,17 @@ import 'package:my_app/oop_learn.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
 void main() {
-  runApp(const StatefulGroup());
+  runApp(const StatefulGroupPage());
 }
 
-class StatefulGroup extends StatefulWidget {
-  const StatefulGroup({Key? key}) : super(key: key);
+class StatefulGroupPage extends StatefulWidget {
+  const StatefulGroupPage({Key? key}) : super(key: key);
 
   @override
-  State<StatefulGroup> createState() => _StatefulGroupState();
+  State<StatefulGroupPage> createState() => _StatefulGroupState();
 }
 
-class _StatefulGroupState extends State<StatefulGroup> {
+class _StatefulGroupState extends State<StatefulGroupPage> {
   int _currentIndex = 0;
 
   @override

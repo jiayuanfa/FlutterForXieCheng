@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/data_type.dart';
+import 'package:my_app/flutter_layout_page.dart';
 import 'package:my_app/generic_learn.dart';
+import 'package:my_app/less_group_page.dart';
 import 'package:my_app/oop_learn.dart';
 import 'package:my_app/plugin_use.dart';
+import 'package:my_app/stateful_group_page.dart';
 
 void main() {
-  runApp(const PluginUse());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,98 +18,67 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter必备Dart基础',
+      title: '创建和使用Flutter的路由和导航',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter必备Dart基础'),
+      home: Scaffold(
+        appBar: AppBar(
+            title:Text('创建和使用Flutter的路由和导航'),
+
+        ),
+        body: const RouteNavigator(),
+      ),
+      routes: <String, WidgetBuilder>{
+        'plugin': (BuildContext context) => const PluginUse(),
+        'less': (BuildContext context) => const LessGroupPage(),
+        'ful': (BuildContext context) => const StatefulGroupPage(),
+        'layout': (BuildContext context) => const FlutterLayoutPage(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+class RouteNavigator extends StatefulWidget {
+  const RouteNavigator({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<RouteNavigator> createState() => _RouteNavigatorState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _RouteNavigatorState extends State<RouteNavigator> {
+  bool byName = false;
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-
-    learnOOP();
-
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+    return Container(
+      child: Column(
+        children: <Widget>[
+          SwitchListTile(
+            title: Text('${byName?'':'不'}通过路由名称跳转'),
+              value: byName, onChanged: (value) {
+            setState(() {
+              byName = value;
+            });
+          }),
+          _item('StatelessWidget组件', LessGroupPage(), 'less'),
+          _item('StatefulWidget组件', StatefulGroupPage(), 'ful'),
+          _item('插件使用', PluginUse(), 'plugin'),
+          _item('flutterLayout', FlutterLayoutPage(), 'layout'),
+        ],
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'Flutter插件的使用',
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
-  void learnOOP() {
-    Student.doPrint('learnOOP');
-
-    /// 创建Student实例
-    Student student = Student('清华', 'Jack', 18);
-    student.school = '985';
-    print(student.toString());
-
-    Student student2 = Student('北大', 'Tom', 16, city: '北京', country: '中国');
-    student2.school = '985';
-    print(student2.toString());
-
-    // 抽象类的使用
-    StudyFlutter studyFlutter = StudyFlutter();
-    studyFlutter.study();
-
-    // 多继承
-
-    // 方法
-    FunctionLearn functionLearn = FunctionLearn();
-    int result = functionLearn.sum(1, 2);
-    print(result);
-
-    // 泛型
-    TestGeneric testGeneric = TestGeneric();
-    testGeneric.start();
-
-    // 泛型约束
-    Member<Student> member = Member(Student("清华", "发哥", 18));
-    member.fixedName();
+  _item(String title, page, String routeName) {
+      return ElevatedButton(
+        onPressed: (){
+          if (byName) {
+            Navigator.pushNamed(context, routeName);
+          } else {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+          }
+        },
+        child: Text(title),
+      );
   }
 }
