@@ -119,7 +119,18 @@ class _StatefulGroupState extends State<StatefulGroup> {
                     )
                   ],
                 ))
-            : const Text('列表'),
+            : Column(
+          children: <Widget>[
+            const Text('列表'),
+
+            /// 一个可以拉伸填满高度的组件
+            Expanded(
+                child: Container(
+              decoration: const BoxDecoration(color: Colors.red),
+                  child: const Text('拉伸填满高度'),
+            )),
+          ],
+        ),
       ),
     );
   }

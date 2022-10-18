@@ -40,4 +40,8 @@ samples, guidance on mobile development, and a full API reference.
 - Flutter插件的使用（plugin_use.dart）
 - StatelessWidget与基础组件
 - StatefulWidget与基础组件
-- Flutter布局开发
+- Flutter布局开发（纵向拉伸填满高度、
+- PageView：可设置内边距、圆角等、下拉刷新组件、Card组件、悬浮按钮组件、AlertDialog组件、Image组件、
+- Chip组件：可设置左边图片、右边文字
+- Warp组件：从左到右自动排列组件，可自动换行
+- Stack组件：支持叠加布局，类似于Android的FrameLayout组件
