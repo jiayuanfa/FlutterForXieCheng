@@ -27,7 +27,15 @@ class _StatefulGroupState extends State<StatefulGroupPage> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text('StatefulWidget与基础组件')),
+        appBar: AppBar(
+          title: const Text('StatefulWidget与基础组件'),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {
@@ -94,7 +102,7 @@ class _StatefulGroupState extends State<StatefulGroupPage> {
                       ),
                     ),
                     Image.network(
-                        'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.daimg.com%2Fuploads%2Fallimg%2F210114%2F1-210114151951.jpg&refer=http%3A%2F%2Fimg.daimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668570386&t=2379ce7e4f93f0cd74422e9d7e0c6ef4',
+                      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.daimg.com%2Fuploads%2Fallimg%2F210114%2F1-210114151951.jpg&refer=http%3A%2F%2Fimg.daimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668570386&t=2379ce7e4f93f0cd74422e9d7e0c6ef4',
                       width: 200,
                       height: 200,
                     ),
@@ -102,13 +110,13 @@ class _StatefulGroupState extends State<StatefulGroupPage> {
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                           hintText: '请输入',
-                          hintStyle: TextStyle(fontSize: 15)
-                      ),
+                          hintStyle: TextStyle(fontSize: 15)),
                     ),
                     Container(
                       height: 100,
                       margin: const EdgeInsets.only(top: 10),
-                      decoration: const BoxDecoration(color: Colors.lightBlueAccent),
+                      decoration:
+                          const BoxDecoration(color: Colors.lightBlueAccent),
                       child: PageView(
                         children: <Widget>[
                           _item('Page1', Colors.deepPurple),
@@ -120,17 +128,17 @@ class _StatefulGroupState extends State<StatefulGroupPage> {
                   ],
                 ))
             : Column(
-          children: <Widget>[
-            const Text('列表'),
+                children: <Widget>[
+                  const Text('列表'),
 
-            /// 一个可以拉伸填满高度的组件
-            Expanded(
-                child: Container(
-              decoration: const BoxDecoration(color: Colors.red),
-                  child: const Text('拉伸填满高度'),
-            )),
-          ],
-        ),
+                  /// 一个可以拉伸填满高度的组件
+                  Expanded(
+                      child: Container(
+                    decoration: const BoxDecoration(color: Colors.red),
+                    child: const Text('拉伸填满高度'),
+                  )),
+                ],
+              ),
       ),
     );
   }

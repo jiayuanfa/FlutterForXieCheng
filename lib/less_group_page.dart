@@ -24,7 +24,15 @@ class LessGroupPage extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text('StatelessWidget与基础插件')),
+        appBar: AppBar(
+          title: const Text('StatelessWidget与基础插件'),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
+        ),
         body: Container(
           decoration: const BoxDecoration(color: Colors.white),
           alignment: Alignment.center,
@@ -48,7 +56,7 @@ class LessGroupPage extends StatelessWidget {
               /// Card : 带有圆角、阴影、边框效果的卡片
               Card(
                 color: Colors.blue,
-                elevation: 10,  // 阴影
+                elevation: 10, // 阴影
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   child: Text('I am a Card', style: textStyle),

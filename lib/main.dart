@@ -24,11 +24,11 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-            title:Text('创建和使用Flutter的路由和导航'),
-
+          title: const Text('创建和使用Flutter的路由和导航'),
         ),
         body: const RouteNavigator(),
       ),
+      /// 路由注册
       routes: <String, WidgetBuilder>{
         'plugin': (BuildContext context) => const PluginUse(),
         'less': (BuildContext context) => const LessGroupPage(),
@@ -48,37 +48,41 @@ class RouteNavigator extends StatefulWidget {
 
 class _RouteNavigatorState extends State<RouteNavigator> {
   bool byName = false;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          SwitchListTile(
-            title: Text('${byName?'':'不'}通过路由名称跳转'),
-              value: byName, onChanged: (value) {
-            setState(() {
-              byName = value;
-            });
-          }),
-          _item('StatelessWidget组件', LessGroupPage(), 'less'),
-          _item('StatefulWidget组件', StatefulGroupPage(), 'ful'),
-          _item('插件使用', PluginUse(), 'plugin'),
-          _item('flutterLayout', FlutterLayoutPage(), 'layout'),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        SwitchListTile(
+            title: Text('${byName ? '' : '不'}通过路由名称跳转'),
+            value: byName,
+            onChanged: (value) {
+              setState(() {
+                byName = value;
+              });
+            }),
+        _item('StatelessWidget组件', const LessGroupPage(), 'less'),
+        _item('StatefulWidget组件', const StatefulGroupPage(), 'ful'),
+        _item('插件使用', const PluginUse(), 'plugin'),
+        _item('flutterLayout', const FlutterLayoutPage(), 'layout'),
+      ],
     );
   }
 
+  /// 路由跳转方法
   _item(String title, page, String routeName) {
-      return ElevatedButton(
-        onPressed: (){
-          if (byName) {
-            Navigator.pushNamed(context, routeName);
-          } else {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => page));
-          }
-        },
-        child: Text(title),
-      );
+    return ElevatedButton(
+      onPressed: () {
+        if (byName) {
+          /// 前提：注册了路由，通过注册的路由名字进行跳转
+          Navigator.pushNamed(context, routeName);
+        } else {
+          /// 未注册路由 直接通过组件跳转
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => page));
+        }
+      },
+      child: Text(title),
+    );
   }
 }
