@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/data_type.dart';
 import 'package:my_app/flutter_layout_page.dart';
 import 'package:my_app/generic_learn.dart';
+import 'package:my_app/gesture_page.dart';
 import 'package:my_app/less_group_page.dart';
 import 'package:my_app/oop_learn.dart';
 import 'package:my_app/plugin_use.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         'less': (BuildContext context) => const LessGroupPage(),
         'ful': (BuildContext context) => const StatefulGroupPage(),
         'layout': (BuildContext context) => const FlutterLayoutPage(),
+        'gesture': (BuildContext context) => const GesturePage()
       },
     );
   }
@@ -65,6 +67,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('StatefulWidget组件', const StatefulGroupPage(), 'ful'),
         _item('插件使用', const PluginUse(), 'plugin'),
         _item('flutterLayout', const FlutterLayoutPage(), 'layout'),
+        _item('GestureDetector', const GesturePage(), 'gesture')
       ],
     );
   }
