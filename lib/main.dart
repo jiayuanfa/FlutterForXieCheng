@@ -33,6 +33,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
     return MaterialApp(
       title: '创建和使用Flutter的路由和导航',
       theme: ThemeData(
+        // fontFamily: 'RubikMonoOne', // 全局更换字体
         brightness: _brightness,
         primarySwatch: Colors.blue,
       ),
@@ -52,7 +53,11 @@ class _DynamicThemeState extends State<DynamicTheme> {
                       }
                     });
                   },
-                  child: const Text('切换模式')),
+                  child: const Text(
+                      '切换模式ABC',
+                      style: TextStyle(fontFamily: 'RubikMonoOne')
+                  ),
+                ),
               const RouteNavigator(),
             ],
           )),
