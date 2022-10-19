@@ -47,3 +47,4 @@ samples, guidance on mobile development, and a full API reference.
 - Stack组件：支持叠加布局，类似于Android的FrameLayout组件
 - 创建和使用Flutter的路由以及导航
 - 手势检测：点击、双击、长按、滑动
+- Flutter第三方APP跳转
