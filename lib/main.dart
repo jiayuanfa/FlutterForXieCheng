@@ -9,6 +9,7 @@ import 'package:my_app/oop_learn.dart';
 import 'package:my_app/plugin_use.dart';
 import 'package:my_app/stateful_group_page.dart';
 import 'package:my_app/res_page.dart';
+import 'package:my_app/flutter_widget_lifecycle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,9 @@ class MyApp extends StatelessWidget {
         'layout': (BuildContext context) => const FlutterLayoutPage(),
         'gesture': (BuildContext context) => const GesturePage(),
         'res': (BuildContext context) => const ResPage(),
-        'launcher': (BuildContext context) => const LauncherPage()
+        'launcher': (BuildContext context) => const LauncherPage(),
+        'widgetLifecycle': (BuildContext context) => const WidgetLifecycle(),
+
       },
     );
   }
@@ -74,6 +77,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('GestureDetector', const GesturePage(), 'gesture'),
         _item('资源文件使用', const ResPage(), 'res'),
         _item('打开第三方APP', const LauncherPage(), 'launcher'),
+        _item('Flutter生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
 
       ],
     );
