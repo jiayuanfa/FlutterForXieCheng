@@ -7,6 +7,7 @@ import 'package:my_app/gesture_page.dart';
 import 'package:my_app/launcher_page.dart';
 import 'package:my_app/less_group_page.dart';
 import 'package:my_app/oop_learn.dart';
+import 'package:my_app/photo_app_page.dart';
 import 'package:my_app/plugin_use.dart';
 import 'package:my_app/stateful_group_page.dart';
 import 'package:my_app/res_page.dart';
@@ -73,6 +74,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'launcher': (BuildContext context) => const LauncherPage(),
         'widgetLifecycle': (BuildContext context) => const WidgetLifecycle(),
         'appLifecycle': (BuildContext context) => const AppLifecycle(),
+        'photoApp': (BuildContext context) => const PhotoApp(),
       },
     );
   }
@@ -109,6 +111,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('打开第三方APP', const LauncherPage(), 'launcher'),
         _item('Flutter Widget生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
         _item('App生命周期', const AppLifecycle(), 'appLifecycle'),
+        _item('photoApp', const PhotoApp(), 'photoApp')
       ],
     );
   }

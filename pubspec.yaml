@@ -49,6 +49,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_color_plugin: ^1.1.0
   url_launcher: ^6.1.6
+  image_picker: ^0.8.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
