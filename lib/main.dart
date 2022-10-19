@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/app_lifecycle.dart';
 import 'package:my_app/data_type.dart';
 import 'package:my_app/flutter_layout_page.dart';
 import 'package:my_app/generic_learn.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         'res': (BuildContext context) => const ResPage(),
         'launcher': (BuildContext context) => const LauncherPage(),
         'widgetLifecycle': (BuildContext context) => const WidgetLifecycle(),
+        'appLifecycle': (BuildContext context) => const AppLifecycle(),
 
       },
     );
@@ -77,7 +79,8 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('GestureDetector', const GesturePage(), 'gesture'),
         _item('资源文件使用', const ResPage(), 'res'),
         _item('打开第三方APP', const LauncherPage(), 'launcher'),
-        _item('Flutter生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
+        _item('Flutter Widget生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
+        _item('App生命周期', const AppLifecycle(), 'appLifecycle'),
 
       ],
     );
