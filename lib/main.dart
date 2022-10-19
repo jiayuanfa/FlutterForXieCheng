@@ -13,26 +13,50 @@ import 'package:my_app/res_page.dart';
 import 'package:my_app/flutter_widget_lifecycle.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const DynamicTheme());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class DynamicTheme extends StatefulWidget {
+  const DynamicTheme({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<DynamicTheme> createState() => _DynamicThemeState();
+}
+
+class _DynamicThemeState extends State<DynamicTheme> {
+// This widget is the root of your application.
+
+  Brightness _brightness = Brightness.light;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '创建和使用Flutter的路由和导航',
       theme: ThemeData(
+        brightness: _brightness,
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('创建和使用Flutter的路由和导航'),
-        ),
-        body: const RouteNavigator(),
-      ),
+          appBar: AppBar(
+            title: const Text('创建和使用Flutter的路由和导航'),
+          ),
+          body: Column(
+            children: <Widget>[
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      if (_brightness == Brightness.light) {
+                        _brightness = Brightness.dark;
+                      } else {
+                        _brightness = Brightness.light;
+                      }
+                    });
+                  },
+                  child: const Text('切换模式')),
+              const RouteNavigator(),
+            ],
+          )),
+
       /// 路由注册
       routes: <String, WidgetBuilder>{
         'plugin': (BuildContext context) => const PluginUse(),
@@ -44,7 +68,6 @@ class MyApp extends StatelessWidget {
         'launcher': (BuildContext context) => const LauncherPage(),
         'widgetLifecycle': (BuildContext context) => const WidgetLifecycle(),
         'appLifecycle': (BuildContext context) => const AppLifecycle(),
-
       },
     );
   }
@@ -81,7 +104,6 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('打开第三方APP', const LauncherPage(), 'launcher'),
         _item('Flutter Widget生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
         _item('App生命周期', const AppLifecycle(), 'appLifecycle'),
-
       ],
     );
   }
