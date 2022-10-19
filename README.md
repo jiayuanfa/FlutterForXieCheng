@@ -45,9 +45,9 @@ samples, guidance on mobile development, and a full API reference.
 - Chip组件：可设置左边图片、右边文字
 - Warp组件：从左到右自动排列组件，可自动换行
 - Stack组件：支持叠加布局，类似于Android的FrameLayout组件
-- 创建和使用Flutter的路由以及导航
-- 手势检测：点击、双击、长按、滑动
+- 创建和使用Flutter的路由以及导航（main.dart）
+- 手势检测：点击、双击、长按、滑动（gesture_page.dart）
 - Flutter第三方APP跳转
-- Flutter Widget 生命周期
-- Flutter App 维度的生命周期
-- Flutter 夜间模式和白天模式动态切换功能
+- Flutter Widget 生命周期 (flutter_widget_lifecycle.dart)
+- Flutter App 维度的生命周期 (app_lifecycle.dart)
+- Flutter 夜间模式和白天模式动态切换功能 (main.dart)
