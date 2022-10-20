@@ -12,6 +12,7 @@ import 'package:my_app/plugin_use.dart';
 import 'package:my_app/stateful_group_page.dart';
 import 'package:my_app/res_page.dart';
 import 'package:my_app/flutter_widget_lifecycle.dart';
+import 'package:my_app/Image_placeholder_page.dart';
 
 void main() {
   runApp(const DynamicTheme());
@@ -75,6 +76,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'widgetLifecycle': (BuildContext context) => const WidgetLifecycle(),
         'appLifecycle': (BuildContext context) => const AppLifecycle(),
         'photoApp': (BuildContext context) => const PhotoApp(),
+        'ImagePlaceholderPage': (BuildContext context) => const ImagePlaceholderPage()
       },
     );
   }
@@ -111,7 +113,8 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('打开第三方APP', const LauncherPage(), 'launcher'),
         _item('Flutter Widget生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
         _item('App生命周期', const AppLifecycle(), 'appLifecycle'),
-        _item('photoApp', const PhotoApp(), 'photoApp')
+        _item('photoApp', const PhotoApp(), 'photoApp'),
+        _item('ImagePlaceholderPage', const ImagePlaceholderPage(), 'ImagePlaceholderPage')
       ],
     );
   }

@@ -47,9 +47,16 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  # 颜色插件
   flutter_color_plugin: ^1.1.0
+  # 第三方APP跳转
   url_launcher: ^6.1.6
+  # 图片选择器
   image_picker: ^0.8.6
+  # 图片Placeholder设置
+  transparent_image: ^2.0.0
+  # 图片缓存
+  cached_network_image: ^3.2.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -66,6 +73,7 @@ flutter:
   # 这里的assets必须和上面的uses-material-design在同一个层级，不然会报错
   assets:
     - images/play.jpeg
+    - images/loading.gif
     #   - images/a_dot_burr.jpeg
     #   - images/a_dot_ham.jpeg
 

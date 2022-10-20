@@ -53,3 +53,5 @@ samples, guidance on mobile development, and a full API reference.
 - Flutter 夜间模式和白天模式动态切换功能 (main.dart)
 - Flutter 字体的更换 (main.dart)
 - Flutter 相册APP的开发（photo_app_page.dart）
+- Image网络图片加载带加载器的淡入淡出效果（Image_placeholder_page.dart）
+- Image网络图片缓存
