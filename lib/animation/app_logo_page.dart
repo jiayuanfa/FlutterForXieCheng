@@ -40,7 +40,7 @@ class _AppLogoAnimationState extends State<AppLogoAnimation>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animation'),
+        title: const Text('Animation'),
       ),
       body: _contentWidget(),
     );
@@ -50,6 +50,7 @@ class _AppLogoAnimationState extends State<AppLogoAnimation>
     return Container(
       padding: const EdgeInsets.all(50),
       decoration: const BoxDecoration(color: Colors.white),
+      alignment: Alignment.center,
       child: Column(
         children: <Widget>[
           GestureDetector(
@@ -57,7 +58,7 @@ class _AppLogoAnimationState extends State<AppLogoAnimation>
               animationController?.reset();
               animationController?.forward();
             },
-            child: const Text('Start'),
+            child: const Text('Start', style: TextStyle(fontSize: 30),),
           ),
           Text(
             'State: ${animationStatus.toString()}',
