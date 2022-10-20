@@ -59,4 +59,8 @@ samples, guidance on mobile development, and a full API reference.
 # Flutter动画
 - Animation、AnimationController、AnimationState配合实现AppLogo动画（app_logo_page.dart）
 - 使用AnimationWidget和AnimationBuilder来重构我们的动画
+- AnimationWidget动画（animation_widget_page.dart）
+- AnimationBuilder分离动画（animation_widget_page.dart）分离动画
 - 使用SingleChildScrollView嵌套Column组件，解决Column内容过多造成的渲染溢出问题，SingleChildScrollView只能有一个child（main.dart）
+- Hero动画（两个页面都有，hero元素在两个页面之间飞翔）
+- 标准Hero动画的实现（通过tag来标识，两个页面之间识别传递）
