@@ -14,6 +14,8 @@ import 'package:my_app/stateful_group_page.dart';
 import 'package:my_app/res_page.dart';
 import 'package:my_app/flutter_widget_lifecycle.dart';
 import 'package:my_app/Image_placeholder_page.dart';
+import 'package:my_app/animation/animation_widget_page.dart';
+import 'package:my_app/animation/animation_builder_page.dart';
 
 void main() {
   runApp(const DynamicTheme());
@@ -41,12 +43,14 @@ class _DynamicThemeState extends State<DynamicTheme> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             title: const Text('创建和使用Flutter的路由和导航'),
           ),
-          body: Column(
-            children: <Widget>[
-              ElevatedButton(
+          body: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                ElevatedButton(
                   onPressed: () {
                     setState(() {
                       if (_brightness == Brightness.light) {
@@ -56,13 +60,12 @@ class _DynamicThemeState extends State<DynamicTheme> {
                       }
                     });
                   },
-                  child: const Text(
-                      '切换模式ABC',
-                      style: TextStyle(fontFamily: 'RubikMonoOne')
-                  ),
+                  child: const Text('切换模式ABC',
+                      style: TextStyle(fontFamily: 'RubikMonoOne')),
                 ),
-              const RouteNavigator(),
-            ],
+                const RouteNavigator(),
+              ],
+            ),
           )),
 
       /// 路由注册
@@ -77,8 +80,13 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'widgetLifecycle': (BuildContext context) => const WidgetLifecycle(),
         'appLifecycle': (BuildContext context) => const AppLifecycle(),
         'photoApp': (BuildContext context) => const PhotoApp(),
-        'ImagePlaceholderPage': (BuildContext context) => const ImagePlaceholderPage(),
+        'ImagePlaceholderPage': (BuildContext context) =>
+            const ImagePlaceholderPage(),
         'logoAnimation': (BuildContext context) => const AppLogoAnimation(),
+        'animationWidget': (BuildContext context) =>
+            const AnimationWidgetPage(),
+        'animationBuilder': (BuildContext context) =>
+            const AnimationBuilderPage()
       },
     );
   }
@@ -96,6 +104,10 @@ class _RouteNavigatorState extends State<RouteNavigator> {
 
   @override
   Widget build(BuildContext context) {
+    return _content();
+  }
+
+  _content() {
     return Column(
       children: <Widget>[
         SwitchListTile(
@@ -116,8 +128,13 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('Flutter Widget生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
         _item('App生命周期', const AppLifecycle(), 'appLifecycle'),
         _item('photoApp', const PhotoApp(), 'photoApp'),
-        _item('ImagePlaceholderPage', const ImagePlaceholderPage(), 'ImagePlaceholderPage'),
-        _item('logoAnimation', const AppLogoAnimation(), 'logoAnimation')
+        _item('ImagePlaceholderPage', const ImagePlaceholderPage(),
+            'ImagePlaceholderPage'),
+        _item('logoAnimation', const AppLogoAnimation(), 'logoAnimation'),
+        _item(
+            'animationWidget', const AnimationWidgetPage(), 'animationWidget'),
+        _item('animationBuilder', const AnimationBuilderPage(),
+            'animationBuilder')
       ],
     );
   }

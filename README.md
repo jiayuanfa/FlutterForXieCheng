@@ -57,4 +57,6 @@ samples, guidance on mobile development, and a full API reference.
 - Image网络图片缓存
 
 # Flutter动画
-- Animation、AnimationController、AnimationState配合实现AppLogo动画
+- Animation、AnimationController、AnimationState配合实现AppLogo动画（app_logo_page.dart）
+- 使用AnimationWidget和AnimationBuilder来重构我们的动画
+- 使用SingleChildScrollView嵌套Column组件，解决Column内容过多造成的渲染溢出问题，SingleChildScrollView只能有一个child（main.dart）

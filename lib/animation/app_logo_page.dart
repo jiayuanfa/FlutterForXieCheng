@@ -24,11 +24,12 @@ class _AppLogoAnimationState extends State<AppLogoAnimation>
     /// 使用动画参数设定器+动画控制器初始化一个Animation
     animation = Tween<double>(begin: 0, end: 300).animate(animationController!)
       ..addListener(() {
-        /// 动画每调用一次就会回调我们的监听器
+        /// 动画值发生变化就会回调我们的监听器
         setState(() {
           animationValue = animation?.value;
         });
       })
+      /// 动画的状态发生变化就会回调我们的监听器
       ..addStatusListener((status) {
         setState(() {
           animationStatus = status;
