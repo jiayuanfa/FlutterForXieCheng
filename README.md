@@ -55,3 +55,6 @@ samples, guidance on mobile development, and a full API reference.
 - Flutter 相册APP的开发（photo_app_page.dart）
 - Image网络图片加载带加载器的淡入淡出效果（Image_placeholder_page.dart）
 - Image网络图片缓存
+
+# Flutter动画
+- Animation、AnimationController、AnimationState配合实现AppLogo动画

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/animation/app_logo_page.dart';
 import 'package:my_app/app_lifecycle.dart';
 import 'package:my_app/data_type.dart';
 import 'package:my_app/flutter_layout_page.dart';
@@ -76,7 +77,8 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'widgetLifecycle': (BuildContext context) => const WidgetLifecycle(),
         'appLifecycle': (BuildContext context) => const AppLifecycle(),
         'photoApp': (BuildContext context) => const PhotoApp(),
-        'ImagePlaceholderPage': (BuildContext context) => const ImagePlaceholderPage()
+        'ImagePlaceholderPage': (BuildContext context) => const ImagePlaceholderPage(),
+        'logoAnimation': (BuildContext context) => const AppLogoAnimation(),
       },
     );
   }
@@ -114,7 +116,8 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('Flutter Widget生命周期', const WidgetLifecycle(), 'widgetLifecycle'),
         _item('App生命周期', const AppLifecycle(), 'appLifecycle'),
         _item('photoApp', const PhotoApp(), 'photoApp'),
-        _item('ImagePlaceholderPage', const ImagePlaceholderPage(), 'ImagePlaceholderPage')
+        _item('ImagePlaceholderPage', const ImagePlaceholderPage(), 'ImagePlaceholderPage'),
+        _item('logoAnimation', const AppLogoAnimation(), 'logoAnimation')
       ],
     );
   }
