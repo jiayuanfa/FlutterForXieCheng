@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/animation/app_logo_page.dart';
 import 'package:my_app/animation/photo_hero.dart';
+import 'package:my_app/animation/photo_hero2.dart';
 import 'package:my_app/app_lifecycle.dart';
 import 'package:my_app/data_type.dart';
 import 'package:my_app/flutter_layout_page.dart';
@@ -88,7 +89,8 @@ class _DynamicThemeState extends State<DynamicTheme> {
             const AnimationWidgetPage(),
         'animationBuilder': (BuildContext context) =>
             const AnimationBuilderPage(),
-        'heroBasicAnimation': (BuildContext context) => const HeroAnimation()
+        'heroBasicAnimation': (BuildContext context) => const HeroAnimation(),
+        'RadialExpansionDemo': (BuildContext context) => const RadialExpansionDemo()
       },
     );
   }
@@ -137,7 +139,8 @@ class _RouteNavigatorState extends State<RouteNavigator> {
             'animationWidget', const AnimationWidgetPage(), 'animationWidget'),
         _item('animationBuilder', const AnimationBuilderPage(),
             'animationBuilder'),
-        _item('heroBasicAnimation', const HeroAnimation(), 'heroBasicAnimation')
+        _item('heroBasicAnimation', const HeroAnimation(), 'heroBasicAnimation'),
+        _item('RadialExpansionDemo', const RadialExpansionDemo(), 'RadialExpansionDemo')
       ],
     );
   }
