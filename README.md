@@ -65,3 +65,7 @@ samples, guidance on mobile development, and a full API reference.
 - Hero动画（两个页面都有，hero元素在两个页面之间飞翔）
 - 标准Hero动画的实现（通过tag来标识，两个页面之间识别传递）
 - Hero RectTween 动画实现
+
+# 携程APP开发
+- 主页面 main.dart
+- 框架搭建 tab_navigator.dart

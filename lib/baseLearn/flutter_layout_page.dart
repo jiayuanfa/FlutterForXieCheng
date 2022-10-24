@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/data_type.dart';
-import 'package:my_app/generic_learn.dart';
-import 'package:my_app/oop_learn.dart';
+import 'package:my_app/baseLearn/data_type.dart';
+import 'package:my_app/baseLearn/generic_learn.dart';
+import 'package:my_app/baseLearn/oop_learn.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
 void main() {

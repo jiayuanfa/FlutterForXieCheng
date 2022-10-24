@@ -2,27 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:my_app/animation/app_logo_page.dart';
 import 'package:my_app/animation/photo_hero.dart';
 import 'package:my_app/animation/photo_hero2.dart';
-import 'package:my_app/app_lifecycle.dart';
-import 'package:my_app/data_type.dart';
-import 'package:my_app/flutter_layout_page.dart';
-import 'package:my_app/generic_learn.dart';
-import 'package:my_app/gesture_page.dart';
-import 'package:my_app/launcher_page.dart';
-import 'package:my_app/less_group_page.dart';
-import 'package:my_app/oop_learn.dart';
-import 'package:my_app/photo_app_page.dart';
-import 'package:my_app/plugin_use.dart';
-import 'package:my_app/stateful_group_page.dart';
-import 'package:my_app/res_page.dart';
-import 'package:my_app/flutter_widget_lifecycle.dart';
-import 'package:my_app/Image_placeholder_page.dart';
+import 'package:my_app/baseLearn/app_lifecycle.dart';
+import 'package:my_app/baseLearn/data_type.dart';
+import 'package:my_app/baseLearn/flutter_layout_page.dart';
+import 'package:my_app/baseLearn/generic_learn.dart';
+import 'package:my_app/baseLearn/gesture_page.dart';
+import 'package:my_app/baseLearn/launcher_page.dart';
+import 'package:my_app/baseLearn/less_group_page.dart';
+import 'package:my_app/baseLearn/oop_learn.dart';
+import 'package:my_app/baseLearn/photo_app_page.dart';
+import 'package:my_app/baseLearn/plugin_use.dart';
+import 'package:my_app/baseLearn/stateful_group_page.dart';
+import 'package:my_app/baseLearn/res_page.dart';
+import 'package:my_app/baseLearn/flutter_widget_lifecycle.dart';
+import 'package:my_app/baseLearn/Image_placeholder_page.dart';
 import 'package:my_app/animation/animation_widget_page.dart';
 import 'package:my_app/animation/animation_builder_page.dart';
+import 'package:my_app/navigator/tab_navigator.dart';
 
 void main() {
-  runApp(const DynamicTheme());
+  runApp(const TripApp());
 }
 
+/// 携程APP
+class TripApp extends StatefulWidget {
+  const TripApp ({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _TripAppState();
+}
+
+class _TripAppState extends State<TripApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: '携程',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const TabNavigator(),
+    );
+  }
+}
+
+/// 学习功能页面
 class DynamicTheme extends StatefulWidget {
   const DynamicTheme({Key? key}) : super(key: key);
 
