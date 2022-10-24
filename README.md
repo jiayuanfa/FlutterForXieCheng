@@ -69,3 +69,5 @@ samples, guidance on mobile development, and a full API reference.
 # 携程APP开发
 - 主页面 main.dart
 - 框架搭建 tab_navigator.dart
+- 首页轮播图实现（home_page.dart）
+- 首页上下滑动轮播图渐变效果的实现

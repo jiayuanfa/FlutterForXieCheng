@@ -57,6 +57,8 @@ dev_dependencies:
   transparent_image: ^2.0.0
   # 图片缓存
   cached_network_image: ^3.2.2
+  # 轮播图
+  flutter_swiper: ^1.1.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
