@@ -77,3 +77,4 @@ samples, guidance on mobile development, and a full API reference.
 - 使用Future进行网络请求
 - 使用FutureBuilder包装Future实现网络请求，并监听网络各阶段的状态
 - 使用Utf8Decoder对response.body进行解析，解决中文乱码问题
+- 本地化持久存储：SharedPreferences的使用

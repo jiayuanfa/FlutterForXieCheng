@@ -61,6 +61,8 @@ dev_dependencies:
   flutter_swiper: ^1.1.6
   # HTTP
   http: ^0.13.5
+  # 数据持久化
+  shared_preferences: ^2.0.15
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
