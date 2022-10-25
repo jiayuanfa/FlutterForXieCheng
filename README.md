@@ -71,3 +71,6 @@ samples, guidance on mobile development, and a full API reference.
 - 框架搭建 tab_navigator.dart
 - 首页轮播图实现（home_page.dart）
 - 首页上下滑动轮播图渐变效果的实现
+
+# HTTP
+- 使用HTTP框架实现GET网络请求、JSON解析、Model转换
