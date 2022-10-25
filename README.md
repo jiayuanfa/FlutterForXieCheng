@@ -74,3 +74,6 @@ samples, guidance on mobile development, and a full API reference.
 
 # HTTP
 - 使用HTTP框架实现GET网络请求、JSON解析、Model转换
+- 使用Future进行网络请求
+- 使用FutureBuilder包装Future实现网络请求，并监听网络各阶段的状态
+- 使用Utf8Decoder对response.body进行解析，解决中文乱码问题
