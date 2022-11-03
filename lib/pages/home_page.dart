@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 /// 轮播图
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:my_app/dao/home_dao.dart';
+import 'package:my_app/model/home_model.dart';
 const APP_SCROLL_OFFSET = 150;
 
 class HomePage extends StatefulWidget {
@@ -14,6 +16,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  String responseStr = '';
+
+  @override
+  void initState() {
+    try {
+      _loadData();
+    } catch (e) {
+      print(e);
+      setState(() {
+        responseStr = e.toString();
+      });
+    }
+    super.initState();
+  }
+
+  _loadData() async {
+    HomeModel homeModel = await HomeDao.fetch();
+    setState(() {
+      responseStr = homeModel.config.searchUrl??"";
+    });
+  }
 
   final List _imageUrls = [
     'https://t7.baidu.com/it/u=2961459243,2146986594&fm=193&f=GIF',
@@ -86,10 +110,10 @@ class _HomePageState extends State<HomePage> {
                       pagination: const SwiperPagination(),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 800,
                     child: ListTile(
-                      title: Text('哈哈'),
+                      title: Text(responseStr),
                     ),
                   )
                 ],
