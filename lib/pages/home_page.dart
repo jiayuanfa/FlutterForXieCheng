@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 /// 轮播图
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:my_app/dao/home_dao.dart';
+import 'package:my_app/model/grid_nav_model.dart';
 import 'package:my_app/model/home_model.dart';
 import 'package:my_app/widget/grid_nav.dart';
+import 'package:my_app/widget/local_nav.dart';
 
 import '../model/common_model.dart';
 const APP_SCROLL_OFFSET = 150;
@@ -22,13 +24,16 @@ class _HomePageState extends State<HomePage> {
 
   String responseStr = '';
   List<CommonModel> localNavList = [];
+  GridNavModel? gridNavModel;
 
   @override
   void initState() {
     try {
       _loadData();
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       setState(() {
         responseStr = e.toString();
       });
@@ -41,6 +46,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       responseStr = homeModel.config.searchUrl??"";
       localNavList = homeModel.localNavList;
+      gridNavModel = homeModel.gridNav;
     });
   }
 
@@ -120,6 +126,13 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.fromLTRB(7, 4, 7, 4),
                     child: LocalNav(localNavList: localNavList),
                   ),
+
+                  /// 不等于空 使用!强拆包 进行布局
+                  if (gridNavModel != null)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
+                      child: GridNav(gridNavModel: gridNavModel!),
+                    ),
                   SizedBox(
                     height: 800,
                     child: ListTile(
