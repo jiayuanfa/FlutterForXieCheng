@@ -46,8 +46,9 @@ class LocalNav extends StatelessWidget {
               MaterialPageRoute(builder: (context) {
                 return HiWebView(
                   url: model.url,
+                  title: model.title,
                   statusBarColor: model.statusBarColor,
-                  hideAppBar: model.hideAppBar,
+                  hideAppBar: false,
                   backForbid: false,
                 );
               }));

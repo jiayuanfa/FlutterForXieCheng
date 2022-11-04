@@ -28,6 +28,9 @@ class HiWebView extends StatefulWidget {
     if (url != null && url!.contains('ctrip.com')) {
       //fix 携程H5 http://无法打开问题
       url = url!.replaceAll("http://", 'https://');
+      if (kDebugMode) {
+        print('htTitleis:$title');
+      }
     }
   }
 
@@ -77,6 +80,14 @@ class _HiWebViewState extends State<HiWebView> {
     } else {
       backButtonColor = Colors.white;
     }
+
+    /// 给H5设置登录 Cookie 这样下次就不用重复登录了
+    var sessionCookie = const WebViewCookie(
+      name: 'my_session_cookie',
+      value: 'cookie_value',
+      domain: 'www.m.ctrip.com',
+    );
+
     return Scaffold(
       body: Column(
         children: [
@@ -90,6 +101,7 @@ class _HiWebViewState extends State<HiWebView> {
           Expanded(
               child: WebView(
                 initialUrl: widget.url,
+                initialCookies: [sessionCookie],
                 javascriptMode: JavascriptMode.unrestricted,
                 onWebViewCreated: (WebViewController webViewController) {
                   _controller.complete(webViewController);
@@ -190,7 +202,7 @@ class _HiWebViewState extends State<HiWebView> {
                 child: Center(
                   child: Text(
                     widget.title ?? '',
-                    style: TextStyle(color: backgroundColor, fontSize: 20),
+                    style: TextStyle(color: backButtonColor, fontSize: 20),
                   ),
                 ))
           ],
