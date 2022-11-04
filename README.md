@@ -91,3 +91,5 @@ samples, guidance on mobile development, and a full API reference.
 ## 首页
 - 大型JSON转Model (home_model.dart)
 - http请求 （home_dao.dart、home_page.dart）
+- 自定义Banner下方本地旅游组件（grid_nav.dart -> LocalNav）
+- 自定义组件的使用、Model传递等 (home_page.dart)

@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:my_app/dao/home_dao.dart';
 import 'package:my_app/model/home_model.dart';
+import 'package:my_app/widget/grid_nav.dart';
+
+import '../model/common_model.dart';
 const APP_SCROLL_OFFSET = 150;
 
 class HomePage extends StatefulWidget {
@@ -18,6 +21,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   String responseStr = '';
+  List<CommonModel> localNavList = [];
 
   @override
   void initState() {
@@ -36,6 +40,7 @@ class _HomePageState extends State<HomePage> {
     HomeModel homeModel = await HomeDao.fetch();
     setState(() {
       responseStr = homeModel.config.searchUrl??"";
+      localNavList = homeModel.localNavList;
     });
   }
 
@@ -72,6 +77,7 @@ class _HomePageState extends State<HomePage> {
       /// 通过MediaQuery.removePadding移除ListView自带的Padding以实现沉浸式顶部的效果
       /// removeTop: true 移除顶部的Padding
       /// 通过Stack实现AppBar覆盖效果，进而实现列表上下滚动改变Banner以及AppBar的透明度
+      backgroundColor: const Color(0xfff2f2f2),
       body: Stack(
         children: <Widget>[
           MediaQuery.removePadding(
@@ -109,6 +115,10 @@ class _HomePageState extends State<HomePage> {
                       /// 指示器
                       pagination: const SwiperPagination(),
                     ),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(7, 4, 7, 4),
+                    child: LocalNav(localNavList: localNavList),
                   ),
                   SizedBox(
                     height: 800,
