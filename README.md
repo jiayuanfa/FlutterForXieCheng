@@ -93,3 +93,5 @@ samples, guidance on mobile development, and a full API reference.
 - http请求 （home_dao.dart、home_page.dart）
 - 自定义Banner下方本地旅游组件（grid_nav.dart -> LocalNav）
 - 自定义组件的使用、Model传递等 (home_page.dart)
+- 使用webview_flutter插件编写HiWebView组件 （webview.dart）
+- 使用HiWebView加载H5、处理重定向问题 （grid_nav.dart）

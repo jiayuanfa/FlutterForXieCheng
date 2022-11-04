@@ -63,6 +63,11 @@ dev_dependencies:
   http: ^0.13.5
   # 数据持久化
   shared_preferences: ^2.0.15
+  # WebView 此插件已经被废弃掉了 要使用 webview_flutter
+#  flutter_webview_plugin: ^0.3.8
+#    git: https://github.com/nuc134r/flutter_webview_plugin.git
+  # webview_flutter
+  webview_flutter: ^3.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

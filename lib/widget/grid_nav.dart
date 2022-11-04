@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/baseLearn/http/http_future_builder_page.dart';
 import 'package:my_app/model/grid_nav_model.dart';
+import 'package:my_app/widget/webview.dart';
 
 import '../model/common_model.dart';
 
@@ -41,7 +42,15 @@ class LocalNav extends StatelessWidget {
   Widget _item(BuildContext context, CommonModel model) {
     return GestureDetector(
       onTap: () {
-
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) {
+                return HiWebView(
+                  url: model.url,
+                  statusBarColor: model.statusBarColor,
+                  hideAppBar: model.hideAppBar,
+                  backForbid: false,
+                );
+              }));
       },
       child: Column(
         children: [
