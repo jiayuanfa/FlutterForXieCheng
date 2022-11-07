@@ -178,34 +178,37 @@ class _HiWebViewState extends State<HiWebView> {
       child: FractionallySizedBox(
         widthFactor: 1,
         /// 使用Stack控件，表明内部约束都以父视图整体为参照来布局
-        child: Stack(
-          children: [
-            /// 返回Button
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                margin: const EdgeInsets.only(left: 10),
-                child: Icon(
-                  Icons.close,
-                  color: backButtonColor,
-                  size: 26,
+        child: SizedBox(
+          height: 40,
+          child: Stack(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(left: 10, top: 10),
+                  child: Icon(
+                    Icons.close,
+                    color: backButtonColor,
+                    size: 30,
+                  ),
                 ),
               ),
-            ),
 
-            /// 标题
-            Positioned(
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Text(
-                    widget.title ?? '',
-                    style: TextStyle(color: backButtonColor, fontSize: 20),
-                  ),
-                ))
-          ],
+              /// 标题
+              Positioned(
+                  left: 0,
+                  right: 0,
+                  top: 15,
+                  child: Center(
+                    child: Text(
+                      widget.title ?? '',
+                      style: TextStyle(color: backButtonColor, fontSize: 20),
+                    ),
+                  ))
+            ],
+          ),
         ),
       ),
     );

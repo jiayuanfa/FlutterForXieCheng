@@ -101,3 +101,9 @@ samples, guidance on mobile development, and a full API reference.
 - 编写中间最复杂的网格布局（grid_nav.dart）
 - 编写底部功能性卡片（sub_nav.dart）
 - 编写底部活动入口卡片（屏幕宽度的获取技巧）（sales_box.dart）
+- 首页首次进入加载进度提示
+- 首页下拉刷新功能
+- 首页Banner接口数据处理、点击事件处理
+
+## 适配
+- 适配 iPhone 14 Pro max 灵动岛
