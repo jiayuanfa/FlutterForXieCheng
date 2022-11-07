@@ -104,6 +104,7 @@ samples, guidance on mobile development, and a full API reference.
 - 首页首次进入加载进度提示
 - 首页下拉刷新功能
 - 首页Banner接口数据处理、点击事件处理
+- 代码优化
 
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛

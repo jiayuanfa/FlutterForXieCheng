@@ -119,81 +119,87 @@ class _HomePageState extends State<HomePage> {
                     /// 这里如果返回了true 则表示消耗掉滑动 别的组件就不能监听到了
                     return false;
                   },
-                  child: ListView(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 160,
-                        /// 内容为ListView才能滚动
-                        /// 并实现监听ListView的上下棍
-                        child: Swiper(
-                          itemCount: bannerList.length,
-                          autoplay: true,
-                          /// item构建返回一个Image
-                          itemBuilder: (BuildContext context, int index) {
-                            CommonModel bannerModel = bannerList[index];
-                            return GestureDetector(
-                              onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                  return HiWebView(
-                                    url: bannerModel.url,
-                                    title: bannerModel.title,
-                                    statusBarColor: bannerModel.statusBarColor,
-                                    hideAppBar: false,
-                                    backForbid: false,
-                                  );
-                                }));
-                              },
-                              child: Image.network(
-                                bannerModel.icon??'',
-                                fit: BoxFit.fill,
-                              ),
-                            );
-                          },
-                          /// 指示器
-                          pagination: const SwiperPagination(),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(7, 4, 7, 4),
-                        child: LocalNav(localNavList: localNavList),
-                      ),
-
-                      /// 不等于空 使用!强拆包 进行布局
-                      if (gridNavModel != null)
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
-                          child: GridNav(gridNavModel: gridNavModel!),
-                        ),
-                      if (subList != null)
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
-                          child: SubNav(subNavList: subList),
-                        ),
-                      if (salesBoxModel != null)
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
-                          child: SalesBox(salesBoxModel: salesBoxModel!),
-                        ),
-                    ],
-                  ),
+                  child: _listView,
                 ),
               )
             ),
-            Opacity(
-              opacity: appBarAlpha,
-              child: Container(
-                height: 80,
-                decoration: const BoxDecoration(color: Colors.white),
-                child: const Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 20),
-                    child: Text('首页'),
-                  ),
-                ),
-              ),
-            )],
+            _appBar
+          ],
         ),
       )
     );
   }
+
+  /// 代码封装 抽离
+  get _appBar => Opacity(
+      opacity: appBarAlpha,
+      child: Container(
+        height: 80,
+        decoration: const BoxDecoration(color: Colors.white),
+        child: const Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: Text('首页'),
+          ),
+        ),
+      ),
+    );
+  get _banner => SizedBox(
+    height: 160,
+    /// 内容为ListView才能滚动
+    /// 并实现监听ListView的上下棍
+    child: Swiper(
+      itemCount: bannerList.length,
+      autoplay: true,
+      /// item构建返回一个Image
+      itemBuilder: (BuildContext context, int index) {
+        CommonModel bannerModel = bannerList[index];
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return HiWebView(
+                url: bannerModel.url,
+                title: bannerModel.title,
+                statusBarColor: bannerModel.statusBarColor,
+                hideAppBar: false,
+                backForbid: false,
+              );
+            }));
+          },
+          child: Image.network(
+            bannerModel.icon??'',
+            fit: BoxFit.fill,
+          ),
+        );
+      },
+      /// 指示器
+      pagination: const SwiperPagination(),
+    ),
+  );
+  get _listView => ListView(
+      children: <Widget>[
+        _banner,
+        Padding(
+          padding: const EdgeInsets.fromLTRB(7, 4, 7, 4),
+          child: LocalNav(localNavList: localNavList),
+        ),
+
+        /// 不等于空 使用!强拆包 进行布局
+        if (gridNavModel != null)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
+            child: GridNav(gridNavModel: gridNavModel!),
+          ),
+        if (subList != null)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
+            child: SubNav(subNavList: subList),
+          ),
+        if (salesBoxModel != null)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
+            child: SalesBox(salesBoxModel: salesBoxModel!),
+          ),
+      ],
+    );
 }
