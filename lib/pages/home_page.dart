@@ -9,6 +9,7 @@ import 'package:my_app/model/grid_nav_model.dart';
 import 'package:my_app/model/home_model.dart';
 import 'package:my_app/widget/grid_nav.dart';
 import 'package:my_app/widget/local_nav.dart';
+import 'package:my_app/widget/sub_nav.dart';
 
 import '../model/common_model.dart';
 const APP_SCROLL_OFFSET = 150;
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   String responseStr = '';
   List<CommonModel> localNavList = [];
   GridNavModel? gridNavModel;
+  List<CommonModel> subList = [];
 
   @override
   void initState() {
@@ -47,6 +49,7 @@ class _HomePageState extends State<HomePage> {
       responseStr = homeModel.config.searchUrl??"";
       localNavList = homeModel.localNavList;
       gridNavModel = homeModel.gridNav;
+      subList = homeModel.subNavList;
     });
   }
 
@@ -132,6 +135,11 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
                       child: GridNav(gridNavModel: gridNavModel!),
+                    ),
+                  if (subList != null)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
+                      child: SubNav(subNavList: subList),
                     ),
                   SizedBox(
                     height: 800,
