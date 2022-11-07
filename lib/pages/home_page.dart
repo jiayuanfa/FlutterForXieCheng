@@ -7,8 +7,10 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:my_app/dao/home_dao.dart';
 import 'package:my_app/model/grid_nav_model.dart';
 import 'package:my_app/model/home_model.dart';
+import 'package:my_app/model/sales_box_model.dart';
 import 'package:my_app/widget/grid_nav.dart';
 import 'package:my_app/widget/local_nav.dart';
+import 'package:my_app/widget/sales_box.dart';
 import 'package:my_app/widget/sub_nav.dart';
 
 import '../model/common_model.dart';
@@ -27,6 +29,7 @@ class _HomePageState extends State<HomePage> {
   List<CommonModel> localNavList = [];
   GridNavModel? gridNavModel;
   List<CommonModel> subList = [];
+  SalesBoxModel? salesBoxModel;
 
   @override
   void initState() {
@@ -50,6 +53,7 @@ class _HomePageState extends State<HomePage> {
       localNavList = homeModel.localNavList;
       gridNavModel = homeModel.gridNav;
       subList = homeModel.subNavList;
+      salesBoxModel = homeModel.salesBox;
     });
   }
 
@@ -141,6 +145,11 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
                       child: SubNav(subNavList: subList),
                     ),
+                  if (salesBoxModel != null)
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
+                      child: SalesBox(salesBoxModel: salesBoxModel!),
+                  ),
                   SizedBox(
                     height: 800,
                     child: ListTile(

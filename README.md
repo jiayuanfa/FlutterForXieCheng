@@ -100,3 +100,4 @@ samples, guidance on mobile development, and a full API reference.
 - HiWebView组件适配iOS WXWebView并完美运行
 - 编写中间最复杂的网格布局（grid_nav.dart）
 - 编写底部功能性卡片（sub_nav.dart）
+- 编写底部活动入口卡片（sales_box.dart）
