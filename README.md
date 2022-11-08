@@ -111,6 +111,10 @@ samples, guidance on mobile development, and a full API reference.
 - 首页SearchBar模块代码编写 （home_page.dart）
 - 首页上下滑动SearchBar状态变化处理（home_page.dart）
 - 搜索页SearchBar模块代码编写（search_page.dart）
+- SearchModel处理（search_model.dart）
+- JSON转JSON数组、JSON数组转Model数组（search_model.dart）
+- search_page页面接口调用 （search_page.dart）
+- 
 
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）

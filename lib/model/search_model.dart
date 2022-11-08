@@ -6,7 +6,11 @@ class SearchModel {
   SearchModel({this.data});
 
   factory SearchModel.fromJson(Map<String, dynamic> json) {
+
+    /// 第一步 把JSON转换为数组 用var接收
     var dataJson = json['data'] as List;
+
+    /// 第二步 把JSON数组转换为Model数组
     List<SearchItem> data =
     dataJson.map((i) => SearchItem.fromJson(i)).toList();
     return SearchModel(data: data);
