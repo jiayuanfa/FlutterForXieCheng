@@ -114,7 +114,7 @@ samples, guidance on mobile development, and a full API reference.
 - SearchModel处理（search_model.dart）
 - JSON转JSON数组、JSON数组转Model数组（search_model.dart）
 - search_page页面接口调用 （search_page.dart）
-- 
+- 搜索界面UI编写、搜索结果关键词高亮富文本处理（search_page.dart）
 
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）
