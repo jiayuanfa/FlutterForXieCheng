@@ -12,11 +12,13 @@ import 'package:my_app/widget/grid_nav.dart';
 import 'package:my_app/widget/loading_container.dart';
 import 'package:my_app/widget/local_nav.dart';
 import 'package:my_app/widget/sales_box.dart';
+import 'package:my_app/widget/search_bar.dart';
 import 'package:my_app/widget/sub_nav.dart';
 
 import '../model/common_model.dart';
 import '../widget/webview.dart';
 const APP_SCROLL_OFFSET = 150;
+const SEARCH_BAR_DEFAULT_TEXT = '网红打卡地 景点 酒店 美食';
 
 class HomePage extends StatefulWidget {
   const HomePage ({Key? key}) : super(key: key);
@@ -131,21 +133,46 @@ class _HomePageState extends State<HomePage> {
   }
 
   /// 代码封装 抽离
-  get _appBar => Opacity(
-      opacity: appBarAlpha,
-      child: Container(
-        height: 80,
-        decoration: const BoxDecoration(color: Colors.white),
-        child: const Center(
-          child: Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: Text('首页'),
+  /// App Bar
+  /// 1：背景：渐变背景 2：child: search_bar 3：阴影
+  get _appBar {
+    return Column(
+      children: [
+        Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              //AppBar渐变透明遮罩背景
+              colors: [Color(0x66000000), Colors.transparent],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            )
+          ),
+
+          /// SearchBar
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
+            height: 100,
+            decoration: BoxDecoration(color: Color.fromARGB((appBarAlpha * 255).toInt(), 255, 255, 255),),
+            child: SearchBar(
+              searchBarType: appBarAlpha > 0.2 ? SearchBarType.homeLight : SearchBarType.home,
+              inputBoxClick: _jumpToSearch,
+              speakClick: _jumpToSpeak,
+              defaultText: SEARCH_BAR_DEFAULT_TEXT,
+              leftButtonClick: (){},
+            ),
           ),
         ),
-      ),
+
+        /// 底部的上滑阴影
+        Container(
+          height: appBarAlpha > 0.2 ? 0.5 : 0,
+          decoration: const BoxDecoration(boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 0.5)]),
+        )
+      ],
     );
+  }
   get _banner => SizedBox(
-    height: 160,
+    height: 200,
     /// 内容为ListView才能滚动
     /// 并实现监听ListView的上下棍
     child: Swiper(
@@ -202,4 +229,10 @@ class _HomePageState extends State<HomePage> {
           ),
       ],
     );
+
+  void _jumpToSearch() {
+  }
+
+  void _jumpToSpeak() {
+  }
 }

@@ -32,7 +32,9 @@ class _TabNavigatorState extends State<TabNavigator> {
         controller: _controller,
         children: const <Widget>[
           HomePage(),
-          SearchPage(),
+          SearchPage(
+            hideLeft: true,
+          ),
           TravelPage(),
           MyPage()
         ],
