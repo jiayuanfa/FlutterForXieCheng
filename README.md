@@ -116,7 +116,10 @@ samples, guidance on mobile development, and a full API reference.
 - search_page页面接口调用 （search_page.dart）
 - 搜索结果图标动态适配显示（search_page.dart）
 - 搜索界面UI编写、搜索结果关键词高亮富文本处理（search_page.dart）
+- 智能语音模块，百度语音识别SDK，Android端导入
 
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）
+- flutter_swiper_null_safety: ^1.0.0 使用空安全版本
+- 解决Android Studio编译空安全报错
 

@@ -20,7 +20,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -50,15 +50,17 @@ dev_dependencies:
   # 颜色插件
   flutter_color_plugin: ^1.1.0
   # 第三方APP跳转 要求版本为33太高 先放弃
-#  url_launcher: ^6.1.6
+  #  url_launcher: ^6.1.6
   # 图片选择器
   image_picker: ^0.8.6
   # 图片Placeholder设置
   transparent_image: ^2.0.0
+  # 轮播图
+#  flutter_swiper: ^1.1.6
+  # 使用空安全版本，不然使用Android Studio编译不通过
+  flutter_swiper_null_safety: ^1.0.0
   # 图片缓存
   cached_network_image: ^3.2.2
-  # 轮播图
-  flutter_swiper: ^1.1.6
   # HTTP
   http: ^0.13.5
   # 数据持久化

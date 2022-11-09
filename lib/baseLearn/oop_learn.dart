@@ -78,7 +78,7 @@ class StudyFlutter extends Study {
 /// 多继承是为了有多个类的能力
 /// 为我们现在已经有的类，增加别的类的特性
 class Test extends Person with Study {
-  Test(super.name, super.age);
+  Test() : super('', 0);
 
   @override
   void study() {

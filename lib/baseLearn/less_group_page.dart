@@ -12,7 +12,7 @@ void main() {
 /// 是一个不需要状态管理的组件
 /// 不需要根据自身的状态来重新渲染自己
 class LessGroupPage extends StatelessWidget {
-  const LessGroupPage({super.key});
+  const LessGroupPage({Key? key, }) : super(key: key);
 
   // This widget is the root of your application.
   @override

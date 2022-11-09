@@ -19,7 +19,7 @@ class LogoWidget extends StatelessWidget {
 class GrowTransition extends StatelessWidget {
   final Widget child;
   final Animation<double> animation;
-  const GrowTransition({super.key, required this.child, required this.animation});
+  const GrowTransition({Key? key, required this.child, required this.animation}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

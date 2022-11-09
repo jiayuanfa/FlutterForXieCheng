@@ -2,7 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// 轮播图
-import 'package:flutter_swiper/flutter_swiper.dart';
+// import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:my_app/dao/home_dao.dart';
 import 'package:my_app/model/grid_nav_model.dart';
 import 'package:my_app/model/home_model.dart';

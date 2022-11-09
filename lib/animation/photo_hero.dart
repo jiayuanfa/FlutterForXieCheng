@@ -11,7 +11,7 @@ class PhotoHero extends StatelessWidget {
   final VoidCallback onTap;
   final double width;
 
-  const PhotoHero({super.key, required this.photo, required this.onTap, required this.width});
+  const PhotoHero({Key? key, required this.photo, required this.onTap, required this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

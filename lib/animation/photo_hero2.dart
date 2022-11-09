@@ -14,7 +14,7 @@ class Photo extends StatelessWidget {
   final Color? color;
 
   const Photo(
-      {super.key, required this.photo, required this.onTap, this.color});
+      {Key? key, required this.photo, required this.onTap, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

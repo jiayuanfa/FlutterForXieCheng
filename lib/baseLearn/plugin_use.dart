@@ -5,7 +5,7 @@ import 'package:my_app/baseLearn/oop_learn.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
 class PluginUse extends StatefulWidget {
-  const PluginUse({super.key});
+  const PluginUse({Key? key}) : super(key: key);
   @override
   State<PluginUse> createState() => _PluginUseState();
 }

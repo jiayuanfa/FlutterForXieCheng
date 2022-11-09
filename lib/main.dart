@@ -120,7 +120,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
 }
 
 class RouteNavigator extends StatefulWidget {
-  const RouteNavigator({super.key});
+  const RouteNavigator({Key? key}) : super(key: key);
 
   @override
   State<RouteNavigator> createState() => _RouteNavigatorState();
