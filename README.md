@@ -122,4 +122,5 @@ samples, guidance on mobile development, and a full API reference.
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）
 - flutter_swiper_null_safety: ^1.0.0 使用空安全版本
 - 解决Android Studio编译空安全报错
-
+- 解决Android端 FlutterSDK 引入编译的问题 (app下的build.gradle)
+- 解决Android端 App与Module同时引入FlutterSDK造成的so包冲突的问题 (app下的build.gradle)
