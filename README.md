@@ -116,7 +116,8 @@ samples, guidance on mobile development, and a full API reference.
 - search_page页面接口调用 （search_page.dart）
 - 搜索结果图标动态适配显示（search_page.dart）
 - 搜索界面UI编写、搜索结果关键词高亮富文本处理（search_page.dart）
-- 智能语音模块，百度语音识别SDK，Android端导入
+- 智能语音模块，百度语音识别SDK，Android端导入 （Android项目中的AsrPlugin Module模块）
+- 语音识别页面、长按动画（speak_page.dart）
 
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）

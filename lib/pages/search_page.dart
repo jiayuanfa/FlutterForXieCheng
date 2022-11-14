@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/dao/search_dao.dart';
 import 'package:my_app/model/search_model.dart';
+import 'package:my_app/pages/speak_page.dart';
 import 'package:my_app/pages/home_page.dart';
 import 'package:my_app/widget/search_bar.dart';
 import 'package:my_app/widget/webview.dart';
@@ -110,7 +111,11 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
-  void _jumpToSpeak() {}
+  void _jumpToSpeak() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SpeakPage()));
+  }
 
   /// 文字发生改变
   void _onTextChanged(String text) {

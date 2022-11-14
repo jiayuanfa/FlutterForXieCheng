@@ -19,6 +19,7 @@ import 'package:my_app/widget/sub_nav.dart';
 import '../model/common_model.dart';
 import '../model/config_model.dart';
 import '../widget/webview.dart';
+import 'speak_page.dart';
 
 const APP_SCROLL_OFFSET = 150;
 const SEARCH_BAR_DEFAULT_TEXT = '网红打卡地 景点 酒店 美食';
@@ -257,5 +258,9 @@ class _HomePageState extends State<HomePage> {
                 )));
   }
 
-  void _jumpToSpeak() {}
+  void _jumpToSpeak() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SpeakPage()));
+  }
 }
