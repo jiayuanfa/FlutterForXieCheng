@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.asr.plugin">
 
     <!--  百度智能语音SDK所需权限  -->
@@ -7,7 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application>
 
@@ -18,12 +20,12 @@
         <!--   配置百度智能语音SDK所需的 API_KEY SECRET_KEY    -->
         <meta-data
             android:name="com.baidu.speech.APP_ID"
-            android:value="15519387" />
+            android:value="28420289" />
         <meta-data
             android:name="com.baidu.speech.API_KEY"
-            android:value="Ywyh8ErHPQXBSapdQZqVBtdl" />
+            android:value="Kn46SI0OGqQuNErgitrhjsCU" />
         <meta-data
             android:name="com.baidu.speech.SECRET_KEY"
-            android:value="DFPpDWnOGrNGzxfX07D5GFLryh3d3Nne" />
+            android:value="u7DdRCnhF2cy4Z2cubFOEGHRsMfXU1L2" />
     </application>
 </manifest>

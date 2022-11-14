@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/search_page.dart';
 import 'package:my_app/plugin/asr_manager.dart';
 
 class SpeakPage extends StatefulWidget {
@@ -161,6 +163,22 @@ class _SpeakPageState extends State<SpeakPage>
     setState(() {
       speakTips = '识别中...';
     });
+    AsrManager.start().then((text){
+      if (text.isNotEmpty) {
+        setState(() {
+          speakResult = text;
+        });
+        Navigator.pop(context);
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>
+            SearchPage(
+              keyword: text
+            )));
+      }
+    }).catchError((e) {
+      if (kDebugMode) {
+        print("----------$e");
+      }
+    });
   }
 
   /// 结束
@@ -170,7 +188,7 @@ class _SpeakPageState extends State<SpeakPage>
     });
     controller.reset();
     controller.stop();
-    // AsrManager.stop();
+    AsrManager.stop();
   }
 }
 

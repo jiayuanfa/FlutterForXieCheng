@@ -19,7 +19,7 @@ public class AsrManager {
     private EventManager asr;
 
     // SDK 内部核心 事件回调类， 用于开发者写自己的识别回调逻辑
-    private RecogEventAdapter eventListener;
+    private final RecogEventAdapter eventListener;
 
     // 未release前，只能new一个
     private static volatile boolean isInited = false;
