@@ -171,7 +171,7 @@ class _SpeakPageState extends State<SpeakPage>
         Navigator.pop(context);
         Navigator.push(context, MaterialPageRoute(builder: (context) =>
             SearchPage(
-              keyword: text
+              keyword: text.replaceAll('。', '')
             )));
       }
     }).catchError((e) {

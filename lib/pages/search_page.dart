@@ -43,12 +43,13 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   SearchModel? searchModel;
-  String? keyword;
+  String? tfText;
 
   @override
   void initState() {
-    if (keyword != null) {
-      _onTextChanged(keyword!);
+    tfText = widget.keyword;
+    if (tfText != null) {
+      _onTextChanged(tfText!);
     }
     super.initState();
   }
@@ -119,7 +120,7 @@ class _SearchPageState extends State<SearchPage> {
 
   /// 文字发生改变
   void _onTextChanged(String text) {
-    keyword = text;
+    tfText = text;
     if (kDebugMode) {
       print('onTextChanged$text');
     }
@@ -132,8 +133,8 @@ class _SearchPageState extends State<SearchPage> {
 
     /// 使用服务器返回的 SearchUrl
     String url = '${HomePage.configModel?.searchUrl ?? widget.searchUrl}$text';
-    SearchDao.fetch(url, keyword!).then((model) {
-      if (model.keyword == keyword) {
+    SearchDao.fetch(url, tfText!).then((model) {
+      if (model.keyword == tfText) {
         setState(() {
           searchModel = model;
         });
