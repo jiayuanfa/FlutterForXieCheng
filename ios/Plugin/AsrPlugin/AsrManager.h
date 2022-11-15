@@ -2,20 +2,18 @@
 //  NSObject+AsrManager.h
 //  Runner
 //
-//  Created by 贾元发 on 15.11.22.
+//  Created by jph on 2019/3/17.
+//  Copyright © 2019 The Chromium Authors. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-
-@interface AsrManager: NSObject
-
-typedef void(^AsrCallback)(NSString *message);
-
-+ (instancetype)initWith:(AsrCallback)success failure:(AsrCallback)failure;
+@interface AsrManager:NSObject
+typedef void(^AsrCallback)(NSString* message);
++(instancetype)initWith:(AsrCallback)success failure:(AsrCallback)failure;
 - (void)start;
 - (void)stop;
 - (void)cancel;
-
 @end
+
 

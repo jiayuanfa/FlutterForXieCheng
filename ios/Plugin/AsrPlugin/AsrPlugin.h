@@ -1,15 +1,14 @@
 //
-//  NSObject+AsrPlugin.h
+//  NSObject+AsrManager.h
 //  Runner
 //
-//  Created by 贾元发 on 15.11.22.
+//  Created by jph on 2019/3/17.
+//  Copyright © 2019 The Chromium Authors. All rights reserved.
 //
-
 #import <Flutter/Flutter.h>
 #import <Foundation/Foundation.h>
 
-
-@interface AsrPlugin: NSObject<FlutterPlugin>
+@interface AsrPlugin:NSObject<FlutterPlugin>
 
 @end
 

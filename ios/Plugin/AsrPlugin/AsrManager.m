@@ -2,7 +2,8 @@
 //  NSObject+AsrManager.m
 //  Runner
 //
-//  Created by 贾元发 on 15.11.22.
+//  Created by jph on 2019/3/17.
+//  Copyright © 2019 The Chromium Authors. All rights reserved.
 //
 
 #import "AsrManager.h"
@@ -21,20 +22,12 @@ const NSString* APP_ID = @"28437730";
 @property (nonatomic,copy)AsrCallback asrFailure;
 @end
 @implementation AsrManager
-
-/**
- 初始化
- */
 +(instancetype)initWith:(AsrCallback)success failure:(AsrCallback)failure{
     AsrManager*asrManager =[AsrManager new];
     asrManager.asrFailure= failure;
     asrManager.asrSuccess = success;
     return asrManager;
 }
-
-/**
- 拿到asrManager实例
- */
 -(id)init{
     self = [super init];
     self.asrEventManager = [BDSEventManager createEventManagerWithName:BDS_ASR_NAME];
@@ -123,8 +116,7 @@ const NSString* APP_ID = @"28437730";
          
             break;
         }
-        case EVoiceRecognitionClientWorkStatusFinish: {
-            //语音识别功能完成，服务器返回正确结果
+        case EVoiceRecognitionClientWorkStatusFinish: {//语音识别功能完成，服务器返回正确结果
             if ([aObj isKindOfClass:[NSDictionary class]]) {
                 NSString *result =aObj[@"results_recognition"][0];
                 if (self.asrSuccess) {
@@ -183,4 +175,3 @@ const NSString* APP_ID = @"28437730";
     }
 }
 @end
-
