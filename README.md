@@ -16,6 +16,9 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 # FlutterForXieCheng
 # Flutter从入坑到上架
+- Flutter从0到1复杂界面布局
+- Flutter调用安卓Module插件实现调用原生SDK通信
+- Flutter调用iOS插件实现调用原生SDK通信
 
 # Dart基础
 - 常用数据类型 (data_type.dart)
@@ -119,6 +122,8 @@ samples, guidance on mobile development, and a full API reference.
 - 智能语音模块，百度语音识别SDK，Android端导入 （Android项目中的AsrPlugin Module模块）
 - 语音识别页面、长按动画（speak_page.dart）
 - Android语音SDK插件与Dart进行调用（speak_page.dart、search_page.dart）
+- iOS语音SDK插件编写、插件注册（ios工程下AsrPlugin文件夹） 
+- iOS语音SDK调试
 
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）
