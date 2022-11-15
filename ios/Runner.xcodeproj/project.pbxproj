@@ -13,7 +13,6 @@
 		2EE0D287292336A500E0CB46 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE0D2862923369B00E0CB46 /* libiconv.2.4.0.tbd */; };
 		2EE0D289292336C300E0CB46 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE0D288292336B600E0CB46 /* libc++.tbd */; };
 		2EE0D28B292336D700E0CB46 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE0D28A292336D100E0CB46 /* libz.1.2.5.tbd */; };
-		2EE0D2AC292340CB00E0CB46 /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE0D28E292340CA00E0CB46 /* libBaiduSpeechSDK.a */; };
 		2EE0D2AD292340CB00E0CB46 /* bds_license.dat in Resources */ = {isa = PBXBuildFile; fileRef = 2EE0D292292340CB00E0CB46 /* bds_license.dat */; };
 		2EE0D2AE292340CB00E0CB46 /* bds_easr_basic_model.dat in Resources */ = {isa = PBXBuildFile; fileRef = 2EE0D293292340CB00E0CB46 /* bds_easr_basic_model.dat */; };
 		2EE0D2AF292340CB00E0CB46 /* bds_easr_mfe_cmvn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 2EE0D294292340CB00E0CB46 /* bds_easr_mfe_cmvn.dat */; };
@@ -69,7 +68,6 @@
 		2EE0D2862923369B00E0CB46 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		2EE0D288292336B600E0CB46 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		2EE0D28A292336D100E0CB46 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
-		2EE0D28E292340CA00E0CB46 /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		2EE0D292292340CB00E0CB46 /* bds_license.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bds_license.dat; sourceTree = "<group>"; };
 		2EE0D293292340CB00E0CB46 /* bds_easr_basic_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_basic_model.dat; sourceTree = "<group>"; };
 		2EE0D294292340CB00E0CB46 /* bds_easr_mfe_cmvn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bds_easr_mfe_cmvn.dat; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				2EE0D28B292336D700E0CB46 /* libz.1.2.5.tbd in Frameworks */,
 				2EE0D2832923365700E0CB46 /* CoreTelephony.framework in Frameworks */,
 				2EE0D2852923367E00E0CB46 /* libsqlite3.0.tbd in Frameworks */,
-				2EE0D2AC292340CB00E0CB46 /* libBaiduSpeechSDK.a in Frameworks */,
 				F8EC0E5B0288794292A42EC9 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,7 +156,6 @@
 		2EE0D28D292340CA00E0CB46 /* BDSClientLib */ = {
 			isa = PBXGroup;
 			children = (
-				2EE0D28E292340CA00E0CB46 /* libBaiduSpeechSDK.a */,
 			);
 			path = BDSClientLib;
 			sourceTree = "<group>";
