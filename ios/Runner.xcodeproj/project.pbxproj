@@ -38,6 +38,7 @@
 		2EE0D2C3292340CB00E0CB46 /* darkBlue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EE0D2AB292340CB00E0CB46 /* darkBlue.bundle */; };
 		2EE0D2C62923414A00E0CB46 /* AsrManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0D2C52923414A00E0CB46 /* AsrManager.m */; };
 		2EE0D2D52923709F00E0CB46 /* AsrPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0D2D42923709F00E0CB46 /* AsrPlugin.m */; };
+		2EE0D2D72923842100E0CB46 /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE0D2D62923842100E0CB46 /* libBaiduSpeechSDK.a */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -98,6 +99,7 @@
 		2EE0D2D229236E9900E0CB46 /* BDSASRParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSASRParameters.h; sourceTree = "<group>"; };
 		2EE0D2D32923709F00E0CB46 /* AsrPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsrPlugin.h; sourceTree = "<group>"; };
 		2EE0D2D42923709F00E0CB46 /* AsrPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsrPlugin.m; sourceTree = "<group>"; };
+		2EE0D2D62923842100E0CB46 /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		5D8C1EC0B5D46DE2AAA0BBB3 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 		5D905C63A050776FA18DC34A /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				2EE0D28B292336D700E0CB46 /* libz.1.2.5.tbd in Frameworks */,
 				2EE0D2832923365700E0CB46 /* CoreTelephony.framework in Frameworks */,
 				2EE0D2852923367E00E0CB46 /* libsqlite3.0.tbd in Frameworks */,
+				2EE0D2D72923842100E0CB46 /* libBaiduSpeechSDK.a in Frameworks */,
 				F8EC0E5B0288794292A42EC9 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +159,7 @@
 		2EE0D28D292340CA00E0CB46 /* BDSClientLib */ = {
 			isa = PBXGroup;
 			children = (
+				2EE0D2D62923842100E0CB46 /* libBaiduSpeechSDK.a */,
 			);
 			path = BDSClientLib;
 			sourceTree = "<group>";
