@@ -125,6 +125,17 @@ samples, guidance on mobile development, and a full API reference.
 - iOS语音SDK插件编写、插件注册（ios工程下AsrPlugin文件夹） 
 - iOS语音SDK调试
 
+## 旅拍
+- 接口可变分层设计（travel_dao.dart、travel_tab_dao.dart）
+- 固定参数转JSON作为请求参数
+- 瀑布流（travel_tab_page.dart）
+- 卡片
+- 解决PageView左右滑动与TabBarView左右滑动的冲突问题（tab_navigator.dart）
+- 下拉刷新（travel_page.dart）
+- 上拉加载（travel_page.dart）
+- 第一次进入加载（travel_page.dart）
+- 下划线库、瀑布流库的使用（Tab下划线  underline_indicator: ^0.0.4 瀑布流组件 flutter_staggered_grid_view: ^0.4.0）
+
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）
 - flutter_swiper_null_safety: ^1.0.0 使用空安全版本

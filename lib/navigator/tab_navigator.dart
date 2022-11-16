@@ -30,6 +30,8 @@ class _TabNavigatorState extends State<TabNavigator> {
       /// 使用PageView实现N个子页面可切换
       body: PageView(
         controller: _controller,
+        /// 禁止左右滑动
+        physics: const NeverScrollableScrollPhysics(),
         children: const <Widget>[
           HomePage(),
           SearchPage(
