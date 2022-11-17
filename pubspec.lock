@@ -132,6 +132,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  flutter_nested:
+    dependency: "direct dev"
+    description:
+      name: flutter_nested
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -139,13 +146,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.7"
-  flutter_staggered_grid_view:
-    dependency: "direct dev"
-    description:
-      name: flutter_staggered_grid_view
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1"
   flutter_swiper_null_safety:
     dependency: "direct dev"
     description:

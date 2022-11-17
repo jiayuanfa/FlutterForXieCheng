@@ -135,6 +135,7 @@ samples, guidance on mobile development, and a full API reference.
 - 上拉加载（travel_page.dart）
 - 第一次进入加载（travel_page.dart）
 - 下划线库、瀑布流库的使用（Tab下划线  underline_indicator: ^0.0.4 瀑布流组件 flutter_staggered_grid_view: ^0.4.0）
+- 由于瀑布流组件的性能问题，更改使用性能更好的flutter_nested: ^1.0.0
 
 ## 适配
 - 适配 iPhone 14 Pro max 灵动岛（webview.dart）

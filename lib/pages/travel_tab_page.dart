@@ -1,16 +1,14 @@
-
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../dao/travel_dao.dart';
 import '../model/travel_model.dart';
 import 'package:transparent_image/transparent_image.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+// import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_nested/flutter_nested.dart';
 import '../widget/loading_container.dart';
 import '../widget/webview.dart';
-
 
 const _TRAVEL_URL =
     'https://m.ctrip.com/restapi/soa2/16189/json/searchTripShootListForHomePageV2?_fxpcqlniredt=09031014111431397988&__gw_appid=99999999&__gw_ver=1.0&__gw_from=10650013707&__gw_platform=H5';
@@ -18,22 +16,23 @@ const _TRAVEL_URL =
 const PAGE_SIZE = 10;
 
 class TravelTabPage extends StatefulWidget {
-
   final String? travelUrl;
   final Map params;
   final String groupChannelCode;
 
-  const TravelTabPage({Key? key,
-    this.travelUrl,
-    required this.params,
-    required this.groupChannelCode}) : super(key: key);
+  const TravelTabPage(
+      {Key? key,
+      this.travelUrl,
+      required this.params,
+      required this.groupChannelCode})
+      : super(key: key);
 
   @override
   State<TravelTabPage> createState() => _TravelTabPageState();
 }
 
-class _TravelTabPageState extends State<TravelTabPage> with AutomaticKeepAliveClientMixin{
-
+class _TravelTabPageState extends State<TravelTabPage>
+    with AutomaticKeepAliveClientMixin {
   List<TravelItem> travelItems = [];
   int pageIndex = 1;
 
@@ -65,7 +64,6 @@ class _TravelTabPageState extends State<TravelTabPage> with AutomaticKeepAliveCl
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-
       /// 首次加载
       body: LoadingContainer(
         isLoading: _loading,
@@ -80,17 +78,18 @@ class _TravelTabPageState extends State<TravelTabPage> with AutomaticKeepAliveCl
               context: context,
 
               /// 瀑布流
-              child: StaggeredGridView.countBuilder(
-                controller: _scrollController,
-                crossAxisCount: 4,
-                itemCount: travelItems.length,
-                /// 设置瀑布流的每一个Item组件
-                itemBuilder: (BuildContext context, int index) => _TravelItem(
-                  index: index,
-                  item: travelItems[index],
-                ),
-                staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
-              )),
+              child: HiNestedScrollView(
+                  controller: _scrollController,
+                  padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, childAspectRatio: 1),
+                  itemCount: travelItems.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return _TravelItem(
+                      index: index,
+                      item: travelItems[index],
+                    );
+                  })),
         ),
       ),
     );
@@ -110,12 +109,8 @@ class _TravelTabPageState extends State<TravelTabPage> with AutomaticKeepAliveCl
     /// groupChannelCode
     /// pageIndex
     /// PAGE_SIZE
-    TravelDao.fetch(
-        widget.travelUrl ?? _TRAVEL_URL,
-        widget.params,
-        widget.groupChannelCode,
-        pageIndex,
-        PAGE_SIZE)
+    TravelDao.fetch(widget.travelUrl ?? _TRAVEL_URL, widget.params,
+            widget.groupChannelCode, pageIndex, PAGE_SIZE)
         .then((TravelItemModel model) {
       _loading = false;
       setState(() {
@@ -129,7 +124,6 @@ class _TravelTabPageState extends State<TravelTabPage> with AutomaticKeepAliveCl
       }
     });
   }
-
 
   /// 数据清洗
   /// 清洗掉article为空的数据
@@ -170,17 +164,16 @@ class _TravelItem extends StatelessWidget {
         if (item.article.urls.isNotEmpty) {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>
-              HiWebView(
-                url: item.article.urls[0].h5Url,
-                title: '详情',
-                hideAppBar: false,
-                backForbid: false,
-              )));
+              MaterialPageRoute(
+                  builder: (context) => HiWebView(
+                        url: item.article.urls[0].h5Url,
+                        title: '详情',
+                        hideAppBar: false,
+                        backForbid: false,
+                      )));
         }
       },
       child: Card(
-
         /// 圆角裁剪
         child: PhysicalModel(
           color: Colors.transparent,
@@ -189,12 +182,10 @@ class _TravelItem extends StatelessWidget {
 
           /// 上下排列
           child: Column(
-
             /// 内容居左展示
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: <Widget>[
-
               /// 图片组件
               _itemImage(context),
 
@@ -219,7 +210,6 @@ class _TravelItem extends StatelessWidget {
       ),
     );
   }
-
 
   /// 图片+定位信息
   _itemImage(BuildContext context) {
@@ -283,7 +273,6 @@ class _TravelItem extends StatelessWidget {
         : item.article.pois?[0]?.poiName ?? '未知';
   }
 
-
   /// 头像信息等等
   _infoText() {
     return Container(
@@ -293,7 +282,6 @@ class _TravelItem extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-
               /// 圆角头像
               PhysicalModel(
                 color: Colors.transparent,
@@ -339,5 +327,3 @@ class _TravelItem extends StatelessWidget {
     );
   }
 }
-
-
