@@ -20,6 +20,10 @@ samples, guidance on mobile development, and a full API reference.
 - Flutter调用安卓Module插件实现调用原生SDK通信
 - Flutter调用iOS插件实现调用原生SDK通信
 
+## Android项目、iOS项目真机演示
+- https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripAndroid.gif
+- https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripiOS.gif
+
 # Dart基础
 - 常用数据类型 (data_type.dart)
 - 常用数据类型之字符串、以及字符串的API（data_type.dart）
@@ -143,3 +147,4 @@ samples, guidance on mobile development, and a full API reference.
 - 解决Android Studio编译空安全报错
 - 解决Android端 FlutterSDK 引入编译的问题 (app下的build.gradle)
 - 解决Android端 App与Module同时引入FlutterSDK造成的so包冲突的问题 (app下的build.gradle)
+
