@@ -1,19 +1,4 @@
-# my_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 # FlutterForXieCheng
 # Flutter从入坑到上架
 - Flutter从0到1复杂界面布局
@@ -21,8 +6,8 @@ samples, guidance on mobile development, and a full API reference.
 - Flutter调用iOS插件实现调用原生SDK通信
 
 ## Android项目、iOS项目真机演示
-- https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripAndroid.gif
-- https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripiOS.gif
+![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripAndroid.gif)
+![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripiOS.gif)
 
 # Dart基础
 - 常用数据类型 (data_type.dart)
