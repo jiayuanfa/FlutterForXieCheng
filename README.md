@@ -8,6 +8,7 @@
 ## Android项目、iOS项目真机演示
 ![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripAndroid.gif)
 ![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripiOS.gif)
+![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripWeb.gif)
 
 # Dart基础
 - 常用数据类型 (data_type.dart)
