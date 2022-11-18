@@ -21,8 +21,8 @@ samples, guidance on mobile development, and a full API reference.
 - Flutter调用iOS插件实现调用原生SDK通信
 
 ## Android项目、iOS项目真机演示
-- https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripAndroid.gif
-- https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripiOS.gif
+https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripAndroid.gif
+https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripiOS.gif
 
 # Dart基础
 - 常用数据类型 (data_type.dart)
