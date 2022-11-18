@@ -82,7 +82,7 @@ class _TravelTabPageState extends State<TravelTabPage>
                   controller: _scrollController,
                   padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, childAspectRatio: 1),
+                      crossAxisCount: 2, childAspectRatio: 0.63),
                   itemCount: travelItems.length,
                   itemBuilder: (BuildContext context, int index) {
                     return _TravelItem(
@@ -190,16 +190,17 @@ class _TravelItem extends StatelessWidget {
               _itemImage(context),
 
               /// 图片下方的两行文字
-              Container(
-                padding: const EdgeInsets.all(4),
-                child: Text(
-                  item.article.articleTitle,
-
-                  /// 显示两行 结尾省略号
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(fontSize: 14, color: Colors.black87),
-                ),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.only(top: 5),
+                  child:Text(
+                    item.article.articleTitle,
+                    /// 显示两行 结尾省略号
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 14, color: Colors.black87),
+                  ),
+                )
               ),
 
               /// 文字下边的头像 姓名 等
@@ -216,17 +217,12 @@ class _TravelItem extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Stack(
       children: <Widget>[
-        Container(
-          /// 设置最小初始高度，防止动态图片高度时的抖动
-          constraints: BoxConstraints(
-            minHeight: size.width / 2 - 10,
-          ),
-
-          child: FadeInImage.memoryNetwork(
-            placeholder: kTransparentImage,
-            image: item.article.images[0].dynamicUrl,
-            fit: BoxFit.cover,
-          ),
+        FadeInImage.memoryNetwork(
+          width: size.width / 2,
+          height: size.width / 2,
+          placeholder: kTransparentImage,
+          image: item.article.images[0].dynamicUrl,
+          fit: BoxFit.fill,
         ),
 
         /// 定位信息
@@ -276,6 +272,7 @@ class _TravelItem extends StatelessWidget {
   /// 头像信息等等
   _infoText() {
     return Container(
+
       padding: const EdgeInsets.fromLTRB(6, 0, 6, 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

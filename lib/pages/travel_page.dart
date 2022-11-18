@@ -45,7 +45,7 @@ class _TravelPageState extends State<TravelPage>
       children: [
         Container(
           color: Colors.white,
-          padding: const EdgeInsets.only(top: 30),
+          padding: const EdgeInsets.only(top: 50),
 
           /// 使用TabBar组件实现可以左右滑动的Tab
           child: TabBar(
