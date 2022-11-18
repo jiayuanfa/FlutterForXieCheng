@@ -20,7 +20,9 @@ class LoadingContainer extends StatelessWidget {
     Stack(
       children: [
         child,
-        isLoading? _loadingView : Container()
+        isLoading? _loadingView : const Center(
+          child: Text('暂无数据'),
+        )
       ],
     );
   }

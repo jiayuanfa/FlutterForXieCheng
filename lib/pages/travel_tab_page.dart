@@ -67,7 +67,6 @@ class _TravelTabPageState extends State<TravelTabPage>
       /// 首次加载
       body: LoadingContainer(
         isLoading: _loading,
-
         /// 下拉刷新
         child: RefreshIndicator(
           onRefresh: _handleRefresh,
@@ -78,7 +77,9 @@ class _TravelTabPageState extends State<TravelTabPage>
               context: context,
 
               /// 瀑布流
-              child: HiNestedScrollView(
+              child: travelItems.isEmpty? const Center(
+                child: Text('暂无数据o(╥﹏╥)o'),
+              ) : HiNestedScrollView(
                   controller: _scrollController,
                   padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -145,7 +146,7 @@ class _TravelTabPageState extends State<TravelTabPage>
   }
 
   @override
-  bool get wantKeepAlive => true;
+  bool get wantKeepAlive => false;
 }
 
 /// 瀑布流卡片组件
