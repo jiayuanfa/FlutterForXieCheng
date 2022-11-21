@@ -20,6 +20,7 @@ import '../model/common_model.dart';
 import '../model/config_model.dart';
 import '../widget/webview.dart';
 import 'speak_page.dart';
+import 'package:flutter_splash_screen/flutter_splash_screen.dart';
 
 const APP_SCROLL_OFFSET = 150;
 const SEARCH_BAR_DEFAULT_TEXT = '网红打卡地 景点 酒店 美食';
@@ -48,6 +49,14 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     _handleRefresh();
     super.initState();
+    hideScreen();
+  }
+
+  ///hide your splash screen
+  Future<void> hideScreen() async {
+    Future.delayed(const Duration(milliseconds: 3600), () {
+      FlutterSplashScreen.hide();
+    });
   }
 
   Future<void> _handleRefresh() async {

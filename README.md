@@ -132,4 +132,5 @@
 - 解决Android Studio编译空安全报错
 - 解决Android端 FlutterSDK 引入编译的问题 (app下的build.gradle)
 - 解决Android端 App与Module同时引入FlutterSDK造成的so包冲突的问题 (app下的build.gradle)
-
+- Android启动页白屏问题解决，使用flutter_splash_screen这个库
+- iOS设置启动屏

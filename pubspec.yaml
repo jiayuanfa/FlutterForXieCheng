@@ -75,6 +75,8 @@ dev_dependencies:
   # 瀑布流组件
 #  flutter_staggered_grid_view: ^0.4.0  由于性能问题，放弃使用该组件
   flutter_nested: ^1.0.0
+  # 安卓启动屏
+  flutter_splash_screen: ^1.0.0+6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
