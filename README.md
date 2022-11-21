@@ -5,9 +5,10 @@
 - Flutter调用安卓Module插件实现调用原生SDK通信
 - Flutter调用iOS插件实现调用原生SDK通信
 
-## Android项目、iOS项目真机演示
+## Web、Android、iOS演示
 ![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripAndroid.gif)
 ![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripiOS.gif)
+![image](https://github.com/jiayuanfa/FlutterForXieCheng/blob/main/tripWeb.gif)
 
 # Dart基础
 - 常用数据类型 (data_type.dart)
