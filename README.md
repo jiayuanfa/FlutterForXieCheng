@@ -136,3 +136,4 @@
 - Android启动页白屏问题解决，使用flutter_splash_screen这个库
 - iOS设置启动屏
 - 全面屏适配的两种方案 safe()、MediaQuery.of(context).padding
+- 代码封装技巧 （home_page.dart、NavigatorUtil.dart）

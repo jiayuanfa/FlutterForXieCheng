@@ -53,29 +53,20 @@ class _TabNavigatorState extends State<TabNavigator> {
         /// 使用该属性使得Tab下面的文字一直展示
         type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: _defaultColor),
-            activeIcon: Icon(Icons.home, color: _activeColor),
-            label: '首页',
-            tooltip: '首页'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search, color: _defaultColor),
-            activeIcon: Icon(Icons.search, color: _activeColor),
-            label: '搜索'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.camera_alt, color: _defaultColor),
-            activeIcon: Icon(Icons.camera_alt, color: _activeColor),
-            label: '旅拍'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle, color: _defaultColor),
-            activeIcon: Icon(Icons.account_circle, color: _activeColor),
-            label: '我的'
-          ),
+          _bottomItem('首页', Icons.home),
+          _bottomItem('搜索', Icons.search),
+          _bottomItem('旅拍', Icons.camera_alt),
+          _bottomItem('我的', Icons.account_circle),
         ],
       ),
+    );
+  }
+
+  _bottomItem(String title, IconData icon) {
+    return BottomNavigationBarItem(
+        icon: Icon(icon, color: _activeColor),
+        activeIcon: Icon(icon, color: _activeColor),
+        label: title
     );
   }
 }

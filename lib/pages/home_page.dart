@@ -9,6 +9,7 @@ import 'package:my_app/model/grid_nav_model.dart';
 import 'package:my_app/model/home_model.dart';
 import 'package:my_app/model/sales_box_model.dart';
 import 'package:my_app/pages/search_page.dart';
+import 'package:my_app/util/NavigatorUtil.dart';
 import 'package:my_app/widget/grid_nav.dart';
 import 'package:my_app/widget/loading_container.dart';
 import 'package:my_app/widget/local_nav.dart';
@@ -257,14 +258,12 @@ class _HomePageState extends State<HomePage> {
       );
 
   void _jumpToSearch() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => const SearchPage(
-                  hideLeft: false,
-                  hint: SEARCH_BAR_DEFAULT_TEXT,
-                  keyword: '',
-                )));
+    NavigatorUtil.push(context,
+        const SearchPage(
+      hideLeft: false,
+      hint: SEARCH_BAR_DEFAULT_TEXT,
+      keyword: '',
+    ));
   }
 
   void _jumpToSpeak() {

@@ -4,6 +4,7 @@ import 'package:my_app/dao/search_dao.dart';
 import 'package:my_app/model/search_model.dart';
 import 'package:my_app/pages/speak_page.dart';
 import 'package:my_app/pages/home_page.dart';
+import 'package:my_app/util/NavigatorUtil.dart';
 import 'package:my_app/widget/search_bar.dart';
 import 'package:my_app/widget/webview.dart';
 
@@ -114,8 +115,7 @@ class _SearchPageState extends State<SearchPage> {
 
   void _jumpToSpeak() {
     Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const SpeakPage()));
+        context, MaterialPageRoute(builder: (context) => const SpeakPage()));
   }
 
   /// 文字发生改变
@@ -153,14 +153,12 @@ class _SearchPageState extends State<SearchPage> {
     SearchItem searchItem = searchModel!.data![position];
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-          MaterialPageRoute(builder: (context) {
-            return HiWebView(
-              url: searchItem.url,
+        NavigatorUtil.push(context,
+            HiWebView(
+                url: searchItem.url,
                 title: '详情',
                 hideAppBar: false,
-                backForbid: false);
-          })
+                backForbid: false)
         );
       },
       child: Container(
@@ -169,7 +167,6 @@ class _SearchPageState extends State<SearchPage> {
             border: Border(bottom: BorderSide(width: 0.3, color: Colors.grey))),
         child: Row(
           children: [
-
             /// 动态图标
             Container(
               margin: const EdgeInsets.all(1),
@@ -177,8 +174,7 @@ class _SearchPageState extends State<SearchPage> {
                   height: 26,
                   width: 26,
                   // image:AssetImage('images/play.jpeg'),
-                  image: AssetImage(_typeImage(searchItem.type))
-                ),
+                  image: AssetImage(_typeImage(searchItem.type))),
             ),
 
             /// 右边标题和子标题
@@ -216,13 +212,13 @@ class _SearchPageState extends State<SearchPage> {
 
   /// 右边主Title
   _title(SearchItem? item) {
-      if (item == null) return null;
-      List<TextSpan> spans = [];
-      spans.addAll(_keywordTextSpans(item.word, searchModel!.keyword!));
-      spans.add(TextSpan(
-          text: ' ${item.districtname ?? ''} ${item.zonename ?? ''}',
-          style: const TextStyle(fontSize: 16, color: Colors.grey)));
-      return RichText(text: TextSpan(children: spans));
+    if (item == null) return null;
+    List<TextSpan> spans = [];
+    spans.addAll(_keywordTextSpans(item.word, searchModel!.keyword!));
+    spans.add(TextSpan(
+        text: ' ${item.districtname ?? ''} ${item.zonename ?? ''}',
+        style: const TextStyle(fontSize: 16, color: Colors.grey)));
+    return RichText(text: TextSpan(children: spans));
   }
 
   /// 右边子Title
@@ -257,19 +253,17 @@ class _SearchPageState extends State<SearchPage> {
     List<String> arr = wordL.split(keywordL);
 
     /// 非高亮样式、高亮样式
-    TextStyle normalStyle = const TextStyle(fontSize: 16, color: Colors.black87);
-    TextStyle keywordStyle = const TextStyle(fontSize: 16, color: Colors.orange);
+    TextStyle normalStyle =
+        const TextStyle(fontSize: 16, color: Colors.black87);
+    TextStyle keywordStyle =
+        const TextStyle(fontSize: 16, color: Colors.orange);
 
     for (int i = 0; i < arr.length; i++) {
-
       /// 等于0的时候，假设搜索结果以关键词开头，则数组第一个是空，下方判空了，所以跳过
       /// 假设不是搜索关键词开头，那数组第0位肯定不为空，不能添加，所以略过第0位
       if (i != 0) {
-
         /// 添加关键词 并染色
-        spans.add(TextSpan(
-            text: keywordL,
-            style: keywordStyle));
+        spans.add(TextSpan(text: keywordL, style: keywordStyle));
       }
 
       /// 第一位 或者 其他位置 直接取出来添加一个非关键词风格的TextSpan
