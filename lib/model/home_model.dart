@@ -1,8 +1,4 @@
 
-
-
-
-
 import 'package:my_app/model/config_model.dart';
 import 'common_model.dart';
 import 'grid_nav_model.dart';

@@ -208,15 +208,14 @@ class _HomePageState extends State<HomePage> {
             CommonModel bannerModel = bannerList[index];
             return GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return HiWebView(
-                    url: bannerModel.url,
-                    title: bannerModel.title,
-                    statusBarColor: bannerModel.statusBarColor,
-                    hideAppBar: false,
-                    backForbid: false,
-                  );
-                }));
+                NavigatorUtil.push(context,
+                    HiWebView(
+                      url: bannerModel.url,
+                      title: bannerModel.title,
+                      statusBarColor: bannerModel.statusBarColor,
+                      hideAppBar: false,
+                      backForbid: false,
+                    ));
               },
               child: Image.network(
                 bannerModel.icon ?? '',

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/util/NavigatorUtil.dart';
 
 import '../dao/travel_dao.dart';
 import '../model/travel_model.dart';
@@ -163,15 +164,14 @@ class _TravelItem extends StatelessWidget {
       /// 点击跳转WebView
       onTap: () {
         if (item.article.urls.isNotEmpty) {
-          Navigator.push(
+          NavigatorUtil.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => HiWebView(
-                        url: item.article.urls[0].h5Url,
-                        title: '详情',
-                        hideAppBar: false,
-                        backForbid: false,
-                      )));
+              HiWebView(
+                url: item.article.urls[0].h5Url,
+                title: '详情',
+                hideAppBar: false,
+                backForbid: false,
+              ));
         }
       },
       child: Card(

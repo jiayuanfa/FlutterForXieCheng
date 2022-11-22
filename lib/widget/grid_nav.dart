@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/model/common_model.dart';
 import 'package:my_app/model/grid_nav_model.dart';
+import 'package:my_app/util/NavigatorUtil.dart';
 import 'package:my_app/widget/webview.dart';
 
 class GridNav extends StatelessWidget {
@@ -136,16 +137,14 @@ class GridNav extends StatelessWidget {
   _warpGesture(BuildContext context, Widget widget, CommonModel commonModel) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) {
-              return HiWebView(
-                url: commonModel.url,
-                title: commonModel.title,
-                statusBarColor: commonModel.statusBarColor,
-                hideAppBar: false,
-                backForbid: false,
-              );
-            }));
+        NavigatorUtil.push(context,
+            HiWebView(
+              url: commonModel.url,
+              title: commonModel.title,
+              statusBarColor: commonModel.statusBarColor,
+              hideAppBar: false,
+              backForbid: false,
+            ));
       },
       child: widget,
     );

@@ -1,9 +1,10 @@
-///旅拍页模型
+/// 旅拍页模型
+/// 单个页面
 class TravelItemModel {
   late int totalCount;
   List<TravelItem>? resultList;
 
-  //命名构造方法
+  /// 命名构造方法
   TravelItemModel.fromJson(Map<String, dynamic> json) {
     totalCount = json['totalCount'];
     if (json['resultList'] != null) {
@@ -22,6 +23,7 @@ class TravelItemModel {
   }
 }
 
+/// 旅拍页面单个卡片模型数据
 class TravelItem {
   late int type;
   late Article article;
@@ -41,6 +43,7 @@ class TravelItem {
   }
 }
 
+/// 每个卡片都有的内容Model
 class Article {
   late int articleId;
   String? articleType;

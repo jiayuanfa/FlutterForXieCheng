@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/model/common_model.dart';
 import 'package:my_app/model/sales_box_model.dart';
+import 'package:my_app/util/NavigatorUtil.dart';
 import 'package:my_app/widget/webview.dart';
 
 class SalesBox extends StatelessWidget {
@@ -99,15 +100,15 @@ class SalesBox extends StatelessWidget {
         const BorderSide(width: 0.8, color: Color(0xfff2f2f2));
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return HiWebView(
-            url: model.url,
-            title: model.title,
-            statusBarColor: model.statusBarColor,
-            hideAppBar: false,
-            backForbid: false,
-          );
-        }));
+        NavigatorUtil.push(context,
+            HiWebView(
+              url: model.url,
+              title: model.title,
+              statusBarColor: model.statusBarColor,
+              hideAppBar: false,
+              backForbid: false,
+            )
+        );
       },
       child: Container(
         decoration: BoxDecoration(

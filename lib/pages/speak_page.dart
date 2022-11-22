@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/pages/search_page.dart';
 import 'package:my_app/plugin/asr_manager.dart';
+import 'package:my_app/util/NavigatorUtil.dart';
 
 class SpeakPage extends StatefulWidget {
   const SpeakPage({Key? key}) : super(key: key);
@@ -169,10 +170,10 @@ class _SpeakPageState extends State<SpeakPage>
           speakResult = text;
         });
         Navigator.pop(context);
-        Navigator.push(context, MaterialPageRoute(builder: (context) =>
+        NavigatorUtil.push(context,
             SearchPage(
-              keyword: text.replaceAll('。', '')
-            )));
+                keyword: text.replaceAll('。', '')
+            ));
       }
     }).catchError((e) {
       if (kDebugMode) {
